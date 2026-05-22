@@ -1,37 +1,41 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Zenlume Yoga — Crafting the Soul of Your Yoga Brand",
   description:
-    "Minimalist, modern yoga brand customization for designers and entrepreneurs. Logo design, premium packaging, and full brand identity services.",
+    "One-click custom yoga branding for designers and entrepreneurs. From bespoke logos to premium packaging, we bring your yoga brand to life.",
+  keywords: "yoga branding, custom logo, yoga packaging, brand identity, yoga studio design, one-click customization",
+  openGraph: {
+    title: "Zenlume Yoga — Crafting the Soul of Your Yoga Brand",
+    description: "One-click custom yoga branding for designers and entrepreneurs.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${cormorant.variable} ${inter.variable} h-full`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
