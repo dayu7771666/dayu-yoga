@@ -1,12 +1,14 @@
 const points = [
-  "No Minimum Order",
-  "Reply Within 24 Hours",
+  "Choose Your Fabric",
+  "Custom Prints & Dye",
+  "Your Logo. Your Packaging.",
+  "MOQ from 50 Units",
+  "Sample in 7–14 Days",
+  "Bulk Production Ready",
+  "Factory-Direct Pricing",
   "NDA Protected",
-  "Full-Service Studio",
-  "Sample Approval First",
-  "Logo · Packaging · Identity",
-  "Designers & Founders",
-  "Premium Materials",
+  "Full Creative Control",
+  "Designers & Brand Founders",
 ];
 
 export default function TrustBar() {

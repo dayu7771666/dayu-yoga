@@ -3,22 +3,22 @@ import { useEffect, useRef } from "react";
 
 const testimonials = [
   {
-    quote: "As a designer launching my own yoga line, I needed a partner who understood both aesthetics and production. Zenlume delivered a logo and packaging system that exceeded every expectation. The quality is extraordinary.",
+    quote: "I had my fabrics chosen, my prints ready, and a clear vision — I just needed someone to actually make it. Zenlume turned my specs into finished product in under three weeks. The sample quality was exactly what I needed before committing to bulk.",
     author: "Sarah M.",
-    role: "Independent Yoga Designer",
-    tag: "Logo · Packaging",
+    role: "Independent Yoga Apparel Designer",
+    tag: "Custom Apparel",
   },
   {
-    quote: "I came with just a concept and left with a complete brand identity. The process was seamless — they listened, refined, and delivered exactly what I envisioned. My studio's visual presence has never been stronger.",
+    quote: "As a brand founder, I was tired of factories that wanted to redesign everything. Zenlume just executes. I sent my files, chose my materials, and they produced exactly what I had in mind — at a price point that actually works for a growing brand.",
     author: "James T.",
-    role: "Yoga Studio Founder",
-    tag: "Full Brand Identity",
+    role: "Yoga Brand Founder",
+    tag: "Apparel · Packaging",
   },
   {
-    quote: "What impressed me most was the attention to detail and the speed of communication. The packaging design elevated my product line instantly. Every client who receives it comments on how premium it feels.",
+    quote: "The packaging production was flawless. I submitted my artwork, selected the paper weight and finish, and received samples within 10 days. The print quality and material feel matched the premium positioning of my brand perfectly.",
     author: "Elena R.",
-    role: "Wellness Entrepreneur",
-    tag: "Premium Packaging",
+    role: "Wellness Brand Principal",
+    tag: "Custom Packaging",
   },
 ];
 
@@ -42,8 +42,8 @@ export default function TestimonialsSection() {
             <span className="eyebrow-text">Testimonials</span>
           </div>
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-6xl font-light leading-tight">
-            Their brands,<br />
-            <span className="font-semibold">born here.</span>
+            Their vision,<br />
+            <span className="font-semibold">produced here.</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

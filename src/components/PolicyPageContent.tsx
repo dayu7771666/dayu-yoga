@@ -9,54 +9,54 @@ const policies = [
     icon: "01",
     content: [
       {
-        subtitle: "What We Offer",
-        text: "Zenlume Yoga provides bespoke brand identity services exclusively for yoga studios, wellness practitioners, and related businesses. Our core services include: Logo Design, Premium Packaging (bags, boxes, wrapping), and Full Brand Identity Systems (typography, color palette, stationery, digital assets).",
+        subtitle: "What We Do",
+        text: "Zenlume Yoga is a production studio. We manufacture custom yoga apparel, packaging, and branded products for designers and brand principals. Our services include: custom apparel production (cut & sew, fabric selection, print application), custom packaging (bags, boxes, tissue paper, labels), and logo application to physical products (embroidery, heat transfer, screen print, woven labels).",
       },
       {
-        subtitle: "Custom Scope",
-        text: "All projects are scoped individually. Before any work begins, we provide a written proposal outlining deliverables, timeline, and pricing. Work outside the agreed scope requires a separate written agreement and may incur additional fees.",
+        subtitle: "What We Do Not Do",
+        text: "We are not a design agency. We do not create logos, develop brand identities, or produce graphic design work. You must provide your own design files, artwork, and creative direction. If you do not have finalized design files, we cannot begin production.",
       },
       {
-        subtitle: "What Is Not Included",
-        text: "Unless explicitly stated in your project proposal, our services do not include website development, social media management, photography, video production, or ongoing brand maintenance. These can be discussed as add-on services.",
+        subtitle: "Who We Work With",
+        text: "We work exclusively with independent designers, brand founders, and brand principals who have a clear product vision and require a reliable production partner. We do not accept walk-in orders or requests without a completed production brief.",
       },
     ],
   },
   {
     id: "process",
-    title: "Project Process & Timelines",
+    title: "Production Process & Timelines",
     icon: "02",
     content: [
       {
         subtitle: "Standard Timelines",
-        text: "Logo Design projects typically take 7–14 business days from brief approval to final delivery. Full Brand Identity packages range from 3–6 weeks. Premium Packaging design takes 5–10 business days. Timelines are confirmed in writing at project start and are subject to client response times.",
+        text: "Sample production: 7–14 business days from confirmed specs. Bulk production: 25–35 business days after sample approval. Custom packaging: 10–20 business days for samples, 20–30 business days for bulk. All timelines are confirmed in writing at order start and are subject to material availability and client response times.",
       },
       {
-        subtitle: "Project Kickoff",
-        text: "Projects begin upon receipt of the signed proposal, completed brand brief, and initial payment. Delays in providing required materials (brief, reference images, feedback) may extend the agreed timeline. We will always communicate any timeline changes proactively.",
+        subtitle: "Order Kickoff",
+        text: "Production begins upon receipt of: signed production agreement, completed product brief with design files, and initial deposit payment. Delays in providing required materials (design files, fabric selections, feedback on samples) will extend the agreed timeline. We communicate all timeline changes proactively.",
       },
       {
-        subtitle: "Rush Projects",
-        text: "Expedited timelines may be available depending on current studio capacity. Rush projects (delivery within 5 business days) incur a 30% surcharge. Please contact us to discuss availability before placing a rush request.",
+        subtitle: "Rush Production",
+        text: "Expedited production may be available depending on current factory capacity. Rush orders incur a 30–50% surcharge depending on timeline compression required. Please contact us before placing a rush request to confirm availability.",
       },
     ],
   },
   {
-    id: "revisions",
-    title: "Revisions & Feedback",
+    id: "sample",
+    title: "Sample Policy",
     icon: "03",
     content: [
       {
-        subtitle: "Included Revision Rounds",
-        text: "Each project includes a defined number of revision rounds as specified in your proposal. Logo Design includes 3 revision rounds. Full Brand Identity includes 2 rounds per deliverable. Premium Packaging includes 2 revision rounds.",
+        subtitle: "Sample Requirement",
+        text: "All bulk production orders require sample approval before bulk production begins. This is non-negotiable. We will not proceed to bulk without written sample approval from the client. This protects both parties and ensures the final product meets your exact specifications.",
       },
       {
-        subtitle: "What Counts as a Revision",
-        text: "A revision round is defined as a consolidated set of feedback submitted in a single message or document. We ask that all feedback for a given round be gathered and submitted together to maintain project momentum.",
+        subtitle: "Sample Costs",
+        text: "Samples are charged at cost plus a production setup fee. Sample costs are credited toward your bulk order if you proceed. Sample fees are non-refundable if you choose not to proceed with bulk production after sample approval.",
       },
       {
-        subtitle: "Additional Revisions",
-        text: "Revisions beyond the included rounds are billed at our standard hourly rate of $85/hour, with a minimum of 1 hour. Major directional changes after concept approval may be treated as a new project phase and quoted separately.",
+        subtitle: "Sample Revisions",
+        text: "Each order includes up to 2 rounds of sample revisions. Additional sample rounds are billed at cost. Major specification changes after the first sample (e.g., changing fabric type, print technique, or garment construction) may require a new sample and additional fees.",
       },
     ],
   },
@@ -67,34 +67,34 @@ const policies = [
     content: [
       {
         subtitle: "Payment Structure",
-        text: "All projects require a 50% deposit before work begins. The remaining 50% is due upon delivery of final files. For projects exceeding $2,000, a milestone-based payment schedule may be arranged and will be outlined in your proposal.",
+        text: "All orders require a 50% deposit before production begins. The remaining 50% is due prior to shipment of final goods. For orders exceeding $5,000 USD, a milestone-based payment schedule may be arranged and will be outlined in your production agreement.",
       },
       {
         subtitle: "Accepted Payment Methods",
-        text: "We accept bank transfer, PayPal, and major credit cards. All prices are quoted in USD. International clients are responsible for any applicable currency conversion fees or bank charges.",
+        text: "We accept bank transfer (T/T), PayPal, and major credit cards. All prices are quoted in USD. International clients are responsible for any applicable currency conversion fees or bank charges. Wire transfer is preferred for orders above $2,000.",
       },
       {
         subtitle: "Late Payments",
-        text: "Final files and source materials will not be released until full payment is received. Invoices outstanding beyond 14 days after the due date will incur a 1.5% monthly late fee. We reserve the right to pause active projects for accounts with overdue balances.",
+        text: "Final goods will not be shipped until full payment is received. Invoices outstanding beyond 14 days after the due date will incur a 1.5% monthly late fee. We reserve the right to place holds on active production for accounts with overdue balances.",
       },
     ],
   },
   {
-    id: "ownership",
-    title: "Intellectual Property & Ownership",
+    id: "moq",
+    title: "Minimum Order Quantities",
     icon: "05",
     content: [
       {
-        subtitle: "Transfer of Rights",
-        text: "Upon receipt of full payment, Zenlume Yoga transfers full intellectual property rights of all final approved deliverables to the client. This includes exclusive rights to use, reproduce, and modify the designs for commercial purposes.",
+        subtitle: "Apparel MOQ",
+        text: "Minimum order quantity for custom apparel is 50 units per style per colorway. Orders below this threshold cannot be accommodated within our standard production workflow. For mixed-style orders, each style must individually meet the MOQ.",
       },
       {
-        subtitle: "Portfolio Rights",
-        text: "Unless otherwise agreed in writing, Zenlume Yoga retains the right to display completed work in our portfolio, website, and social media channels. If you require full confidentiality of the final output, please notify us before project start — a portfolio exclusion fee may apply.",
+        subtitle: "Packaging MOQ",
+        text: "Minimum order quantity for custom packaging (bags, boxes) is 100 units per design. For custom labels and tissue paper, the MOQ is 200 units. Smaller quantities may be available at a premium — contact us to discuss.",
       },
       {
-        subtitle: "Preliminary Work",
-        text: "Concepts, sketches, and rejected design directions that are not selected as the final deliverable remain the intellectual property of Zenlume Yoga and may not be used by the client.",
+        subtitle: "Bulk Pricing",
+        text: "Unit pricing decreases at volume thresholds of 200, 500, 1,000, and 5,000 units. Tiered pricing is provided in your production quote. We encourage clients to plan for scale from the outset to maximize cost efficiency.",
       },
     ],
   },
@@ -105,15 +105,15 @@ const policies = [
     content: [
       {
         subtitle: "Non-Disclosure Agreement",
-        text: "We sign a mutual Non-Disclosure Agreement (NDA) before any project begins. All information you share — including brand concepts, business strategy, target markets, and design briefs — is treated as strictly confidential.",
+        text: "We sign a mutual Non-Disclosure Agreement (NDA) before any project begins. All information you share — including design files, product specifications, brand strategy, and business plans — is treated as strictly confidential and will never be shared with third parties.",
       },
       {
-        subtitle: "Data Security",
-        text: "Project files are stored securely and are never shared with third parties without your explicit written consent. We do not outsource design work to external contractors. All work is completed in-house by our core team.",
+        subtitle: "Design File Security",
+        text: "Your design files are stored on secured internal servers and are never shared with external contractors or other clients. All production work is handled within our controlled factory environment. Files are retained for 12 months after order completion and then securely deleted.",
       },
       {
         subtitle: "NDA Duration",
-        text: "Our confidentiality obligations remain in effect for a minimum of 3 years after project completion, or indefinitely if specified in the signed agreement.",
+        text: "Our confidentiality obligations remain in effect for a minimum of 3 years after order completion, or indefinitely if specified in the signed agreement. We will never reproduce, replicate, or sell designs based on your submitted files.",
       },
     ],
   },
@@ -123,35 +123,35 @@ const policies = [
     icon: "07",
     content: [
       {
-        subtitle: "Client-Initiated Cancellation",
-        text: "If you cancel a project before work begins, your deposit will be refunded in full. If you cancel after work has commenced, the deposit is non-refundable. Any work completed beyond the deposit value will be invoiced at our standard rate.",
+        subtitle: "Pre-Production Cancellation",
+        text: "If you cancel before production begins (before materials are ordered and cutting has started), your deposit will be refunded minus any sample costs already incurred. Cancellations must be submitted in writing.",
       },
       {
-        subtitle: "Refunds",
-        text: "We do not offer refunds on completed and delivered work. If you are dissatisfied with the final output, we will work with you through additional revision rounds to reach a satisfactory result. Our goal is always to deliver work you are proud of.",
+        subtitle: "Mid-Production Cancellation",
+        text: "If you cancel after production has commenced, the deposit is non-refundable. Any production costs incurred beyond the deposit value will be invoiced separately. Partially completed goods may be delivered at your request at cost.",
       },
       {
-        subtitle: "Studio-Initiated Cancellation",
-        text: "In the rare event that Zenlume Yoga must cancel a project due to unforeseen circumstances, we will provide a full refund of all payments received and, where possible, provide preliminary work completed to that point.",
+        subtitle: "Quality Disputes",
+        text: "If delivered goods do not meet the approved sample specifications, we will remake the affected units at no additional cost. Quality disputes must be raised within 14 days of delivery with photographic evidence. We do not accept returns for goods that match the approved sample.",
       },
     ],
   },
   {
     id: "delivery",
-    title: "File Delivery",
+    title: "Shipping & Delivery",
     icon: "08",
     content: [
       {
-        subtitle: "Delivery Format",
-        text: "Final files are delivered via a secure download link (valid for 30 days). Deliverables include all agreed source files: vector formats (AI, EPS, SVG), print-ready PDFs, web-optimized PNGs/JPGs, and a brand style guide in PDF format.",
+        subtitle: "Shipping Terms",
+        text: "All orders ship Ex Works (EXW) from our facility in China unless otherwise agreed. We can arrange freight forwarding at cost. The client is responsible for all import duties, customs clearance, and destination country taxes.",
       },
       {
-        subtitle: "File Storage",
-        text: "We retain project files for 12 months after delivery. After this period, files may be deleted without notice. We strongly recommend downloading and backing up all files immediately upon receipt.",
+        subtitle: "Delivery Timelines",
+        text: "Shipping timelines are provided at order confirmation and depend on destination and chosen freight method. Air freight: 5–10 business days. Sea freight: 25–45 business days depending on destination port. We provide tracking information for all shipments.",
       },
       {
-        subtitle: "Re-delivery",
-        text: "File re-delivery requests within the 12-month storage period are provided free of charge. Re-delivery after this period, or requests for additional file formats not included in the original scope, are billed at our standard hourly rate.",
+        subtitle: "Damage in Transit",
+        text: "We are not responsible for damage or loss occurring during transit. We strongly recommend purchasing cargo insurance for all bulk shipments. We will provide all necessary documentation (packing list, commercial invoice, COO) to support insurance claims.",
       },
     ],
   },
@@ -198,15 +198,15 @@ export default function PolicyPageContent() {
           <div className="flex items-center gap-3 mb-5">
             <span className="block w-8 h-px bg-white/40" />
             <span className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.2em] uppercase text-white/50">
-              Legal & Terms
+              Production Terms
             </span>
           </div>
           <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl font-light text-white leading-[1.05] mb-6">
-            Service<br />
+            Production<br />
             <span className="font-semibold italic">Policy.</span>
           </h1>
           <p className="font-[family-name:var(--font-montserrat)] text-sm text-white/60 max-w-xl leading-relaxed">
-            Everything you need to know about how we work, what to expect, and the terms that govern our collaboration. Last updated: January 2026.
+            Everything you need to know about how we work, what to expect, and the terms that govern our production partnership. Last updated: January 2026.
           </p>
         </div>
       </section>
@@ -305,18 +305,19 @@ export default function PolicyPageContent() {
       {/* ── CTA ── */}
       <section className="py-20 bg-[oklch(0.10_0.004_60)]">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-5xl font-light text-white mb-4">
-            Ready to start your project?
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light text-white mb-6">
+            Ready to place your<br />
+            <span className="font-semibold italic">first production order?</span>
           </h2>
-          <p className="font-[family-name:var(--font-montserrat)] text-sm text-white/50 mb-8 max-w-md mx-auto leading-relaxed">
-            We respond within 24 hours. Every project begins with a conversation.
+          <p className="font-[family-name:var(--font-montserrat)] text-sm text-white/60 max-w-md mx-auto leading-relaxed mb-10">
+            Send us your specs and we will respond within 24 hours with a detailed production quote.
           </p>
           <Link
             href="/contact"
-            className="relative overflow-hidden inline-flex items-center justify-center px-10 py-3.5 font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase text-white bg-[oklch(0.38_0.09_162)] group"
+            className="relative overflow-hidden inline-flex items-center justify-center px-12 py-4 font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase text-white bg-[oklch(0.38_0.09_162)] group"
           >
             <span className="absolute inset-0 bg-[oklch(0.28_0.08_162)] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-            <span className="relative z-10">Get In Touch</span>
+            <span className="relative z-10">Request a Quote</span>
           </Link>
         </div>
       </section>

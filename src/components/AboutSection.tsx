@@ -4,20 +4,20 @@ import Image from "next/image";
 
 const advantages = [
   {
-    title: "Minimalist Craft",
-    desc: "Every design decision is intentional. We strip away the unnecessary to reveal the essential — creating marks that endure.",
+    title: "You Own the Creative",
+    desc: "We never impose a design direction. You bring the vision — your fabrics, your prints, your logo, your packaging. We execute it with precision.",
   },
   {
-    title: "Designer-First",
-    desc: "Built for creatives who understand quality. We speak your language and deliver at the standard you expect.",
+    title: "Factory-Direct Access",
+    desc: "Rooted in China's manufacturing heartland, we give designers and brand founders direct access to production infrastructure without the middleman markup.",
   },
   {
-    title: "Founder-Friendly",
-    desc: "Launching your first studio? We guide you through every step, making professional branding accessible from day one.",
+    title: "Sample Before You Scale",
+    desc: "Every order starts with a physical sample. You approve it before we run a single unit of bulk production. No surprises, no waste.",
   },
   {
-    title: "End-to-End Service",
-    desc: "From the first sketch to the final packaged product, everything is handled in-house with full transparency.",
+    title: "Bulk-Ready at Any Stage",
+    desc: "Whether you are launching 50 units or 5,000, our production lines scale with your brand. Consistent quality from first sample to final shipment.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function AboutSection() {
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src="/service-packaging.jpg"
-                alt="Zenlume Yoga premium packaging"
+                alt="Zenlume production facility"
                 fill
                 className="object-cover img-bw"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -59,7 +59,7 @@ export default function AboutSection() {
             {/* Floating quote */}
             <div className="absolute -bottom-6 -right-6 bg-[oklch(0.10_0.004_60)] p-6 max-w-[260px]">
               <p className="font-[family-name:var(--font-cormorant)] text-base italic text-white/80 leading-relaxed mb-3">
-                &ldquo;Great design is not a luxury — it is the language through which your brand speaks.&rdquo;
+                &ldquo;We do not create your brand. We build it — exactly as you imagined.&rdquo;
               </p>
               <span className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-white/30">
                 Zenlume Studio
@@ -73,14 +73,14 @@ export default function AboutSection() {
               <span className="eyebrow-text">About Us</span>
             </div>
             <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light leading-tight mb-8">
-              A studio built for<br />
-              <span className="font-semibold">creators & founders.</span>
+              A production studio<br />
+              <span className="font-semibold">built for brand founders.</span>
             </h2>
             <p className="font-[family-name:var(--font-montserrat)] text-sm text-gray-500 leading-relaxed mb-6">
-              Zenlume Yoga was founded on a simple belief: every yoga brand deserves a visual identity as intentional as the practice itself. We work exclusively with designers and entrepreneurs who understand that brand is not just aesthetics — it is trust, story, and connection.
+              Zenlume Yoga is a manufacturing studio deeply embedded in China&apos;s yoga product supply chain. We work exclusively with designers and brand principals who have a clear creative vision and need a reliable production partner to bring it to life — at scale.
             </p>
             <p className="font-[family-name:var(--font-montserrat)] text-sm text-gray-500 leading-relaxed mb-10">
-              Our one-click customization process removes friction so you can focus on what matters most — your practice and your people. We handle everything from the first concept to the final packaged product.
+              We do not design. We produce. You select the fabrics, define the prints, finalize your logo application and packaging specs — and we handle everything from sample to bulk delivery with factory-direct efficiency and full quality control.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
@@ -88,13 +88,13 @@ export default function AboutSection() {
                 className="relative overflow-hidden inline-flex items-center justify-center px-10 py-3.5 font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase text-white bg-[oklch(0.38_0.09_162)] group"
               >
                 <span className="absolute inset-0 bg-[oklch(0.28_0.08_162)] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-                <span className="relative z-10">Start Your Project</span>
+                <span className="relative z-10">Request a Quote</span>
               </button>
               <button
                 onClick={() => document.querySelector("#process")?.scrollIntoView({ behavior: "smooth" })}
                 className="font-[family-name:var(--font-montserrat)] text-xs font-medium tracking-widest uppercase text-[oklch(0.13_0.005_60)] underline underline-offset-4 hover:text-[oklch(0.38_0.09_162)] transition-colors"
               >
-                View Our Process
+                See How We Work
               </button>
             </div>
           </div>

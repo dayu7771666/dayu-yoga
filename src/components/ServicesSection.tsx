@@ -5,30 +5,30 @@ import Image from "next/image";
 const services = [
   {
     id: "01",
-    subtitle: "Brand Mark",
-    title: "Logo Design",
+    subtitle: "Apparel & Fabric",
+    title: "Custom Yoga Apparel",
     description:
-      "Minimalist mark-making that captures the essence of your yoga practice. Each logo is a distillation of your brand's philosophy into a single, timeless symbol — delivered with full vector files and a style guide.",
+      "Select from 50+ fabric options — moisture-wicking, bamboo, recycled, or premium stretch blends. Choose your cut, color, and print. We produce your design exactly as envisioned, from sample approval to bulk shipment.",
     image: "/service-logo.jpg",
-    features: ["Brand Mark", "Vector Files", "Color Palette", "Style Guide"],
+    features: ["50+ Fabrics", "Custom Dye & Print", "Cut & Sew", "Bulk from 50 pcs"],
   },
   {
     id: "02",
-    subtitle: "Packaging",
-    title: "Premium Packaging",
+    subtitle: "Brand Packaging",
+    title: "Custom Packaging",
     description:
-      "Eco-conscious bags, boxes, and wrapping that speak before a word is said. Sustainable materials meet refined aesthetics for an unboxing experience worth remembering.",
+      "Design your own bags, boxes, tissue paper, and labels. Upload your artwork or brief our team on your specs — we handle material sourcing, printing, and quality control. Your packaging, produced at scale.",
     image: "/service-packaging.jpg",
-    features: ["Paper Bags", "Gift Boxes", "Eco Materials", "Custom Print"],
+    features: ["Paper Bags", "Gift Boxes", "Custom Labels", "Eco Materials"],
   },
   {
     id: "03",
-    subtitle: "Full System",
-    title: "Full Brand Identity",
+    subtitle: "Brand Identity",
+    title: "Logo & Brand Mark",
     description:
-      "A cohesive visual system for the modern yoga studio. Typography, color palette, stationery, and digital assets — every touchpoint aligned with your vision and ready to launch.",
+      "You create your logo — we bring it to life across every physical touchpoint. Embroidery, heat transfer, woven labels, screen print. Your mark applied with precision to every product in your line.",
     image: "/hero-visual.jpg",
-    features: ["Typography", "Color System", "Stationery", "Digital Assets"],
+    features: ["Embroidery", "Heat Transfer", "Woven Labels", "Screen Print"],
   },
 ];
 
@@ -109,15 +109,15 @@ export default function ServicesSection() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={headRef} className="reveal mb-16 md:mb-20">
           <div className="section-eyebrow">
-            <span className="eyebrow-text">Our Services</span>
+            <span className="eyebrow-text">What We Produce</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-6xl font-light leading-tight max-w-lg">
-              From vision to brand,<br />
-              <span className="font-semibold">every detail handled.</span>
+              Your creative vision,<br />
+              <span className="font-semibold">manufactured to order.</span>
             </h2>
             <p className="font-[family-name:var(--font-montserrat)] text-sm text-gray-500 max-w-xs leading-relaxed">
-              Whether you are a designer or a founder launching your first studio, we provide tailored solutions that elevate your brand from day one.
+              We do not design for you. You bring the vision — we provide the production infrastructure to make it real, at any scale.
             </p>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function ServicesSection() {
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             className="font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase border border-[oklch(0.38_0.09_162)] text-[oklch(0.38_0.09_162)] px-10 py-3.5 hover:bg-[oklch(0.38_0.09_162)] hover:text-white transition-colors duration-300"
           >
-            Discuss Your Needs
+            Discuss Your Production Needs
           </button>
         </div>
       </div>

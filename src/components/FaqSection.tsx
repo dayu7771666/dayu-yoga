@@ -3,28 +3,28 @@ import { useEffect, useRef, useState } from "react";
 
 const faqs = [
   {
-    q: "What types of yoga brands do you work with?",
-    a: "We work with independent yoga designers, studio founders, wellness entrepreneurs, and established brands looking to refresh their identity. Whether you are launching your first studio or scaling an existing brand, we tailor our services to your stage.",
+    q: "Do you design products for clients?",
+    a: "No. We are a production studio, not a design agency. You bring your own creative direction — fabrics, prints, logo files, packaging specs. We manufacture it. If you are looking for someone to design your brand from scratch, we are not the right fit.",
   },
   {
-    q: "Is there a minimum order for packaging?",
-    a: "We offer flexible minimums designed to support early-stage brands. Our packaging services start from small runs, making professional branding accessible without requiring large upfront commitments.",
+    q: "What is the minimum order quantity (MOQ)?",
+    a: "Our standard MOQ is 50 units per style per colorway for apparel, and 100 units for packaging items. For large-scale orders, we offer tiered pricing. Contact us to discuss your specific requirements.",
   },
   {
-    q: "How long does the full brand identity process take?",
-    a: "A typical logo design project takes 7–14 business days. Full brand identity packages range from 3–6 weeks depending on scope. We provide a clear timeline at the start of every project.",
+    q: "How long does sample production take?",
+    a: "Standard sample turnaround is 7–14 business days from the date we receive your confirmed specs and materials. Rush samples (5–7 days) are available at an additional cost depending on current capacity.",
+  },
+  {
+    q: "What file formats do you accept for print and logo application?",
+    a: "We accept AI, EPS, PDF (vector), and high-resolution PNG/TIFF files for print and embroidery. For packaging dielines, we work with AI or PDF files. We will provide templates upon request.",
+  },
+  {
+    q: "Can I choose my own fabrics and materials?",
+    a: "Absolutely. We maintain a library of 50+ fabric options across performance, sustainable, and premium categories. You can select from our swatch library or request a specific material — we will source it and confirm feasibility before production.",
   },
   {
     q: "Do you sign NDAs to protect my designs?",
-    a: "Absolutely. We sign a Non-Disclosure Agreement before any project begins. Your concepts, designs, and brand strategy are strictly confidential and will never be shared or reused.",
-  },
-  {
-    q: "What files will I receive at the end of the project?",
-    a: "You receive all source files including vector formats (AI, EPS, SVG), print-ready PDFs, web-optimized PNGs, and a brand style guide. Everything you need to use your brand across any medium.",
-  },
-  {
-    q: "Can I request revisions during the design process?",
-    a: "Yes. Our process includes structured revision rounds to ensure the final result matches your vision. We iterate collaboratively until you are fully satisfied with every detail.",
+    a: "Yes. We sign a mutual Non-Disclosure Agreement before any project begins. Your design files, brand concepts, and product specifications are strictly confidential and will never be shared, replicated, or used for any other client.",
   },
 ];
 
@@ -51,11 +51,11 @@ export default function FaqSection() {
               <span className="eyebrow-text">FAQ</span>
             </div>
             <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-light leading-tight mb-6">
-              Questions<br />
-              <span className="font-semibold">answered.</span>
+              Production<br />
+              <span className="font-semibold">questions answered.</span>
             </h2>
             <p className="font-[family-name:var(--font-montserrat)] text-sm text-gray-500 leading-relaxed mb-8">
-              Everything you need to know before starting your project. Still have questions? Reach out directly.
+              Everything you need to know before placing your first order. Still have questions? We respond within 24 hours.
             </p>
             <button
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}

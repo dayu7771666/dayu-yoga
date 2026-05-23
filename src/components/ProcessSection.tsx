@@ -2,11 +2,31 @@
 import { useEffect, useRef } from "react";
 
 const steps = [
-  { num: "01", title: "Share Your Vision", desc: "Send us your brand brief, reference images, and aesthetic preferences. Tell us about your values, target audience, and design direction." },
-  { num: "02", title: "Free Consultation", desc: "We respond within 24 hours with a detailed proposal and transparent pricing — no hidden fees, no surprises." },
-  { num: "03", title: "Design & Refine", desc: "Our studio creates initial concepts for your review. We iterate until every detail matches your vision perfectly." },
-  { num: "04", title: "Approve & Finalize", desc: "Once you approve the direction, we finalize all assets with meticulous attention to quality and consistency." },
-  { num: "05", title: "Deliver Your Brand", desc: "All files, production-ready assets, and packaging are delivered directly to you. Your brand is ready to launch." },
+  {
+    num: "01",
+    title: "Share Your Specs",
+    desc: "Send us your design files, fabric preferences, print references, and product requirements. The more detail you provide, the faster we move.",
+  },
+  {
+    num: "02",
+    title: "Get a Quote",
+    desc: "We respond within 24 hours with a transparent production quote — unit cost, MOQ, lead time, and material options. No hidden fees.",
+  },
+  {
+    num: "03",
+    title: "Sample Production",
+    desc: "We produce a physical sample based on your exact specs. You review, approve, or request adjustments. Sample turnaround: 7–14 business days.",
+  },
+  {
+    num: "04",
+    title: "Sample Approval",
+    desc: "Once you sign off on the sample, we lock in all production details — materials, colorways, labels, packaging — and move to bulk.",
+  },
+  {
+    num: "05",
+    title: "Bulk Delivery",
+    desc: "Full production runs with strict QC at every stage. Your finished products are packed and shipped directly to your warehouse or fulfillment center.",
+  },
 ];
 
 export default function ProcessSection() {
@@ -38,11 +58,11 @@ export default function ProcessSection() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-6xl font-light text-white leading-tight">
-              Five steps to<br />
-              <span className="font-semibold">launch your brand.</span>
+              From your files<br />
+              <span className="font-semibold">to your warehouse.</span>
             </h2>
             <p className="font-[family-name:var(--font-montserrat)] text-sm text-white/50 max-w-xs leading-relaxed">
-              A clear, transparent process — from your first message to final delivery, every step is guided by our team.
+              A clear, five-step production process. You stay in control at every stage — from spec submission to final bulk delivery.
             </p>
           </div>
         </div>
@@ -78,14 +98,14 @@ export default function ProcessSection() {
           className="reveal mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 pt-12 border-t border-white/10"
         >
           <p className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl text-white font-light italic">
-            &ldquo;Ready to begin your brand journey?&rdquo;
+            &ldquo;Ready to move from concept to production?&rdquo;
           </p>
           <button
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             className="relative overflow-hidden inline-flex items-center justify-center px-10 py-3.5 font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase text-white bg-[oklch(0.38_0.09_162)] group whitespace-nowrap"
           >
             <span className="absolute inset-0 bg-[oklch(0.28_0.08_162)] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-            <span className="relative z-10">Get Started</span>
+            <span className="relative z-10">Get a Quote</span>
           </button>
         </div>
       </div>
