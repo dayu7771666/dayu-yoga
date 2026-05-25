@@ -53,7 +53,7 @@ export default function ProductPageTemplate({
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-[oklch(0.10_0.004_60)]">
+      <section className="relative min-h-[60vh] min-h-[60svh] flex items-end overflow-hidden bg-[oklch(0.10_0.004_60)]">
         <div className="absolute inset-0">
           <Image
             src={heroImage}

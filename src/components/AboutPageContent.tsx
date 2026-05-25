@@ -52,7 +52,7 @@ export default function AboutPageContent() {
   return (
     <>
       {/* ── Hero Banner ── */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden bg-[oklch(0.10_0.004_60)]">
+      <section className="relative min-h-[60vh] min-h-[60svh] flex items-end overflow-hidden bg-[oklch(0.10_0.004_60)]">
         <div className="absolute inset-0">
           <Image
             src="/about-studio.jpg"
@@ -134,7 +134,7 @@ export default function AboutPageContent() {
       </section>
 
       {/* ── Studio Image Full Width ── */}
-      <section className="relative h-[50vh] md:h-[65vh] overflow-hidden">
+      <section className="relative h-[50vh] h-[50svh] md:h-[65vh] md:h-[65svh] overflow-hidden">
         <Image
           src="/service-packaging.jpg"
           alt="Zenlume production facility"
