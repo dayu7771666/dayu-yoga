@@ -115,7 +115,7 @@ export default function Navbar() {
                 isShopActive || shopOpen ? "text-white" : "text-white/60 hover:text-white"
               }`}
             >
-              Shop
+              PRODUCTS
               <svg
                 width="8" height="5" viewBox="0 0 8 5" fill="none"
                 className={`transition-transform duration-200 ${shopOpen ? "rotate-180" : ""}`}
