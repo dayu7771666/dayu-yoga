@@ -139,7 +139,7 @@ const ptComponents = {
             alt={value.alt ?? ""}
             width={imgWidth}
             height={imgHeight}
-            className="w-auto max-w-full max-h-[450px] mx-auto block"
+            className="max-w-full w-full md:w-auto md:max-w-full max-h-[450px] mx-auto block object-contain"
             sizes="(max-width: 768px) 100vw, 672px"
           />
           {value.caption && (
