@@ -25,32 +25,30 @@ export default function HeroSection() {
           src="/about-studio.jpg"
           alt="Zenlume production studio"
           fill
-          className="object-cover object-center opacity-20"
+          className="object-cover object-center opacity-40"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.10_0.004_60)] via-[oklch(0.10_0.004_60)]/80 to-transparent" />
+        <div className="absolute inset-0 bg-[oklch(0.10_0.004_60)]/60" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text */}
-          <div>
+        <div className="max-w-2xl">
             {/* Eyebrow */}
             <div
               className="hero-line flex items-center gap-3 mb-6"
               style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
             >
               <span className="block w-8 h-px bg-[oklch(0.38_0.09_162)]" />
-              <span className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.2em] uppercase text-white/50">
-                Your Vision. Our Production.
+              <span className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.3em] uppercase text-[oklch(0.38_0.09_162)]">
+                Production Studio · China Manufacturing Hub
               </span>
             </div>
 
             {/* Headline */}
             <h1
-              className="hero-line font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl lg:text-8xl font-light leading-[1.05] text-white mb-2"
+              className="hero-line font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] text-white mb-4"
               style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
             >
               You design it.
@@ -64,7 +62,7 @@ export default function HeroSection() {
 
             {/* Sub */}
             <p
-              className="hero-line font-[family-name:var(--font-montserrat)] text-sm text-white/60 max-w-lg leading-relaxed mb-10"
+              className="hero-line font-[family-name:var(--font-montserrat)] text-sm text-white/70 max-w-lg leading-relaxed mb-10"
               style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
             >
               A production studio rooted in China&apos;s manufacturing heartland. Pick your fabrics, choose your prints, finalize your logo and packaging — we turn your creative vision into tangible, bulk-ready product. Built exclusively for designers and brand founders.
@@ -110,21 +108,6 @@ export default function HeroSection() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right: Hero image */}
-          <div className="hidden lg:block relative">
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <Image
-                src="/hero-visual.jpg"
-                alt="Custom yoga product samples"
-                fill
-                className="object-cover"
-                sizes="50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.10_0.004_60)]/50 to-transparent" />
-            </div>
-          </div>
         </div>
       </div>
 

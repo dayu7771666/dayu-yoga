@@ -227,7 +227,7 @@ export default async function PostPage({
       <Navbar />
 
       {/* ── Hero — full-screen cover image as background (same as About page) ── */}
-      <section className="relative min-h-[70vh] flex items-end overflow-hidden bg-[oklch(0.10_0.004_60)]">
+      <section className="relative min-h-[45vh] flex items-end overflow-hidden bg-[oklch(0.10_0.004_60)]">
         {/* Cover image as background layer */}
         {post.coverImageUrl && (
           <div className="absolute inset-0">
@@ -252,7 +252,7 @@ export default async function PostPage({
               href="/blog"
               className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-white/40 hover:text-white/70 transition-colors"
             >
-              Journal
+              Blog
             </Link>
             <span className="text-white/20 text-xs">›</span>
             {post.category && (

@@ -45,7 +45,7 @@ const apparelSubMenu = [
 
 const siteLinks = [
   { label: "About", href: "/about" },
-  { label: "Journal", href: "/blog" },
+  { label: "Blog", href: "/blog" },
   { label: "Policy", href: "/policy" },
 ];
 
@@ -138,8 +138,8 @@ export default function Navbar() {
                       href={col.href}
                       className={`px-5 py-4 font-[family-name:var(--font-montserrat)] text-xs tracking-[0.12em] uppercase transition-colors duration-200 border-r border-white/10 last:border-r-0 ${
                         pathname === col.href
-                          ? "text-white bg-white/5"
-                          : "text-white/50 hover:text-white hover:bg-white/5"
+                          ? "text-white bg-white/10"
+                          : "text-white/80 hover:text-white hover:bg-white/10"
                       }`}
                     >
                       {col.label}
@@ -155,7 +155,7 @@ export default function Navbar() {
                   <div className="grid grid-cols-4 gap-6">
                     {apparelSubMenu.map((group) => (
                       <div key={group.group}>
-                        <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.15em] uppercase text-white/30 mb-3">
+                        <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.15em] uppercase text-white/60 mb-3">
                           {group.group}
                         </div>
                         <ul className="space-y-2">
@@ -166,7 +166,7 @@ export default function Navbar() {
                                 className={`font-[family-name:var(--font-montserrat)] text-xs transition-colors duration-200 block ${
                                   pathname === item.href
                                     ? "text-white"
-                                    : "text-white/55 hover:text-white"
+                                    : "text-white/80 hover:text-white"
                                 }`}
                               >
                                 {item.label}
@@ -248,7 +248,7 @@ export default function Navbar() {
                   key={col.href}
                   href={col.href}
                   onClick={() => setMenuOpen(false)}
-                  className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.1em] uppercase text-white/50 hover:text-white transition-colors py-2"
+                  className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors py-2"
                 >
                   {col.label}
                 </Link>
@@ -260,7 +260,7 @@ export default function Navbar() {
               </div>
               {apparelSubMenu.map((group) => (
                 <div key={group.group} className="mb-3">
-                  <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-widest uppercase text-white/25 mb-1.5">
+                  <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-widest uppercase text-white/60 mb-1.5">
                     {group.group}
                   </div>
                   {group.items.map((item) => (
@@ -268,7 +268,7 @@ export default function Navbar() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="font-[family-name:var(--font-montserrat)] text-xs text-white/50 hover:text-white transition-colors block py-1.5 pl-2"
+                      className="font-[family-name:var(--font-montserrat)] text-xs text-white/80 hover:text-white transition-colors block py-1.5 pl-2"
                     >
                       {item.label}
                     </Link>
