@@ -151,13 +151,6 @@ function PostCard({ post, featured }: { post: PostCard; featured?: boolean }) {
           {post.title}
         </h2>
 
-        {/* Excerpt */}
-        {post.excerpt && (
-          <p className="text-[oklch(0.45_0.008_60)] text-sm leading-relaxed line-clamp-3 mb-4 flex-1">
-            {post.excerpt}
-          </p>
-        )}
-
         {/* Read more */}
         <div className="flex items-center gap-2 mt-auto">
           <span className="text-[oklch(0.38_0.09_162)] text-xs font-semibold tracking-[0.15em] uppercase">

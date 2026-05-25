@@ -14,12 +14,10 @@ export interface PostCard {
   title: string;
   slug: { current: string };
   publishedAt: string;
-  excerpt?: string;
   author?: string;
   category?: string;
   coverImageUrl?: string;
   coverImageAlt?: string;
-  coverImageCaption?: string;
 }
 
 /** Full post — used on the blog detail page */
@@ -27,8 +25,7 @@ export interface PostFull extends PostCard {
   body?: PortableTextBlock[];
   seoTitle?: string;
   seoDescription?: string;
-  ogImageUrl?: string;
-  ogImageAlt?: string;
+  keywords?: string;
 }
 
 /** Slug item — used for generateStaticParams */

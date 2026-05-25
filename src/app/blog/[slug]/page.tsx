@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { client } from "@/sanity/client";
@@ -11,6 +12,12 @@ import type { PostFull, PostCard, PostSlug } from "@/sanity/types";
 
 // ISR: revalidate every 60 seconds
 export const revalidate = 60;
+
+// Sanity image URL builder — used for inline body images
+const builder = imageUrlBuilder(client);
+function sanityImageUrl(source: { asset?: { _ref?: string; _id?: string } }) {
+  return builder.image(source);
+}
 
 // Pre-render all known slugs at build time
 export async function generateStaticParams() {
@@ -28,17 +35,23 @@ export async function generateMetadata({
   const post = await client.fetch<PostFull | null>(POST_QUERY, { slug });
   if (!post) return { title: "Post Not Found — Zenlume Yoga" };
 
-  // Use dedicated SEO fields if set, otherwise fall back to post content
+  // Title: use seoTitle if set, else derive from post title
   const metaTitle = post.seoTitle ?? `${post.title} — Zenlume Yoga Journal`;
+  // Description: use seoDescription if set, else generic fallback
   const metaDescription =
-    post.seoDescription ?? post.excerpt ?? "Read the latest from the Zenlume Yoga studio.";
-  // OG image: prefer dedicated ogImage, then cover image
-  const ogImageUrl = post.ogImageUrl ?? post.coverImageUrl;
-  const ogImageAlt = post.ogImageAlt ?? post.coverImageAlt ?? post.title;
+    post.seoDescription ?? "Read the latest from the Zenlume Yoga studio.";
+  // OG image: auto-derived from cover image (no manual OG field)
+  const ogImageUrl = post.coverImageUrl;
+  const ogImageAlt = post.coverImageAlt ?? post.title;
+  // Keywords: from the keywords field in Sanity
+  const keywordsArray = post.keywords
+    ? post.keywords.split(",").map((k) => k.trim()).filter(Boolean)
+    : undefined;
 
   return {
     title: metaTitle,
     description: metaDescription,
+    keywords: keywordsArray,
     openGraph: {
       title: metaTitle,
       description: metaDescription,
@@ -68,18 +81,28 @@ function formatDate(iso: string) {
 // ── Portable Text component overrides ────────────────────────────────────────
 const ptComponents = {
   types: {
-    // Inline image block — supports imageUrl (from GROQ projection), alt, caption, size
+    /**
+     * Inline image block inside the article body.
+     * The GROQ query projects `imageUrl` directly from `asset->url`,
+     * but as a fallback we also try to build the URL from the asset reference.
+     */
     image: ({
       value,
     }: {
       value: {
+        asset?: { _ref?: string; _id?: string };
         imageUrl?: string;
         alt?: string;
         caption?: string;
         size?: "full" | "large" | "medium";
       };
     }) => {
-      if (!value?.imageUrl) return null;
+      // Resolve URL: prefer projected imageUrl, fall back to builder
+      const src =
+        value.imageUrl ??
+        (value.asset ? sanityImageUrl(value).width(1200).url() : null);
+
+      if (!src) return null;
 
       const sizeClass =
         value.size === "medium"
@@ -92,7 +115,7 @@ const ptComponents = {
         <figure className={`my-10 ${sizeClass}`}>
           <div className="relative w-full aspect-[16/9] overflow-hidden bg-[oklch(0.93_0.005_80)]">
             <Image
-              src={value.imageUrl}
+              src={src}
               alt={value.alt ?? ""}
               fill
               className="object-cover"
@@ -183,7 +206,10 @@ export default async function PostPage({
       : [
           ...related,
           ...allPosts
-            .filter((p) => p._id !== post._id && !related.find((r) => r._id === p._id))
+            .filter(
+              (p) =>
+                p._id !== post._id && !related.find((r) => r._id === p._id)
+            )
             .slice(0, 3 - related.length),
         ];
 
@@ -191,22 +217,25 @@ export default async function PostPage({
     <>
       <Navbar />
 
-      {/* ── Hero ── */}
-      <section className="relative bg-[oklch(0.10_0.004_60)] pt-32 pb-0 overflow-hidden">
+      {/* ── Hero — dark banner with text + cover image contained inside ── */}
+      <section className="relative bg-[oklch(0.10_0.004_60)] pt-32 pb-16 overflow-hidden">
+        {/* Subtle background tint from cover image */}
         {post.coverImageUrl && (
-          <div className="absolute inset-0 opacity-15">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
             <Image
               src={post.coverImageUrl}
-              alt={post.coverImageAlt ?? post.title}
+              alt=""
               fill
-              className="object-cover"
+              aria-hidden
+              className="object-cover blur-sm scale-105"
               priority
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.10_0.004_60)]/80 via-transparent to-[oklch(0.10_0.004_60)]" />
+            <div className="absolute inset-0 bg-[oklch(0.10_0.004_60)]/70" />
           </div>
         )}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12 pb-16">
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-12">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-8">
             <Link
@@ -229,7 +258,7 @@ export default async function PostPage({
           </h1>
 
           {/* Meta */}
-          <div className="flex flex-wrap items-center gap-5 text-white/40 font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase">
+          <div className="flex flex-wrap items-center gap-5 text-white/40 font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase mb-10">
             {post.publishedAt && <span>{formatDate(post.publishedAt)}</span>}
             {post.author && (
               <>
@@ -238,52 +267,43 @@ export default async function PostPage({
               </>
             )}
           </div>
-        </div>
 
-        {/* Cover image — full width below hero text */}
-        {post.coverImageUrl && (
-          <div className="relative w-full aspect-[21/9] overflow-hidden">
-            <Image
-              src={post.coverImageUrl}
-              alt={post.coverImageAlt ?? post.title}
-              fill
-              className="object-cover"
-              priority
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-          </div>
-        )}
-        {post.coverImageCaption && (
-          <p className="text-center text-xs text-[oklch(0.55_0.008_60)] tracking-wide italic py-3 bg-white">
-            {post.coverImageCaption}
-          </p>
-        )}
+          {/* Cover image — contained within the dark Hero section */}
+          {post.coverImageUrl && (
+            <div className="relative w-full aspect-[16/9] overflow-hidden">
+              <Image
+                src={post.coverImageUrl}
+                alt={post.coverImageAlt ?? post.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 896px"
+              />
+            </div>
+          )}
+        </div>
       </section>
 
       {/* ── Article Body ── */}
       <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
-          {/* Excerpt / lead */}
-          {post.excerpt && (
-            <p className="font-[family-name:var(--font-cormorant)] text-2xl text-[oklch(0.25_0.005_60)] leading-relaxed mb-12 border-l-2 border-[oklch(0.38_0.09_162)] pl-6">
-              {post.excerpt}
-            </p>
-          )}
-
           {/* Body — Portable Text */}
           {post.body ? (
-            <div className="prose prose-lg max-w-none
-              prose-p:font-[family-name:var(--font-montserrat)]
-              prose-p:text-[oklch(0.35_0.005_60)]
-              prose-p:leading-relaxed
-              prose-p:text-base
-              prose-li:font-[family-name:var(--font-montserrat)]
-              prose-li:text-[oklch(0.35_0.005_60)]
-              prose-li:text-base
-              prose-strong:text-[oklch(0.13_0.005_60)]
-              prose-img:rounded-none
-              prose-figure:my-0">
+            <div
+              className="
+                prose prose-lg max-w-none
+                prose-p:font-[family-name:var(--font-montserrat)]
+                prose-p:text-[oklch(0.35_0.005_60)]
+                prose-p:leading-relaxed
+                prose-p:text-base
+                prose-li:font-[family-name:var(--font-montserrat)]
+                prose-li:text-[oklch(0.35_0.005_60)]
+                prose-li:text-base
+                prose-strong:text-[oklch(0.13_0.005_60)]
+                prose-img:rounded-none
+                prose-figure:my-0
+              "
+            >
               <PortableText value={post.body} components={ptComponents} />
             </div>
           ) : (
@@ -338,7 +358,7 @@ export default async function PostPage({
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="font-[family-name:var(--font-cormorant)] text-5xl text-[oklch(0.8_0.005_80)] font-light">
+                        <span className="font-[family-name:var(--font-cormorant)] text-5xl text-[oklch(0.8_0.005_80)] font-light select-none">
                           Z
                         </span>
                       </div>
@@ -363,7 +383,8 @@ export default async function PostPage({
       <section className="bg-[oklch(0.13_0.005_60)] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <p className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl text-white font-light mb-6">
-            Ready to bring your<br />
+            Ready to bring your
+            <br />
             <em>yoga brand to life?</em>
           </p>
           <Link href="/contact" className="btn-primary">

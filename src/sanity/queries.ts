@@ -12,17 +12,16 @@ export const POSTS_QUERY = `*[
   title,
   slug,
   publishedAt,
-  excerpt,
   author,
   category,
   "coverImageUrl": image.asset->url,
-  "coverImageAlt": image.alt,
-  "coverImageCaption": image.caption
+  "coverImageAlt": image.alt
 }`;
 
 /**
  * Blog detail page: fetch a single post by slug.
  * Returns the full body content plus all metadata for SEO.
+ * OG image is derived automatically from coverImage on the front end.
  */
 export const POST_QUERY = `*[
   _type == "post"
@@ -32,7 +31,6 @@ export const POST_QUERY = `*[
   title,
   slug,
   publishedAt,
-  excerpt,
   author,
   category,
   body[]{
@@ -46,11 +44,9 @@ export const POST_QUERY = `*[
   },
   "coverImageUrl": image.asset->url,
   "coverImageAlt": image.alt,
-  "coverImageCaption": image.caption,
   seoTitle,
   seoDescription,
-  "ogImageUrl": ogImage.asset->url,
-  "ogImageAlt": ogImage.alt
+  keywords
 }`;
 
 /**
