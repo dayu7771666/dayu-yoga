@@ -292,8 +292,8 @@ export default function PolicyPageContent() {
                 </p>
                 <p className="font-[family-name:var(--font-montserrat)] text-xs text-gray-400 leading-relaxed">
                   For questions, please contact us at{" "}
-                  <a href="mailto:hello@zenlumeyoga.com" className="text-[oklch(0.38_0.09_162)] hover:underline underline-offset-2">
-                    hello@zenlumeyoga.com
+                  <a href="mailto:tidelineswim@swimsuitcustom.com" className="text-[oklch(0.38_0.09_162)] hover:underline underline-offset-2">
+                    tidelineswim@swimsuitcustom.com
                   </a>
                 </p>
               </div>

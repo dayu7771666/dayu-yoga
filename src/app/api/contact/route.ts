@@ -87,7 +87,7 @@ async function saveToNotion(data: ContactFormData): Promise<void> {
 
 async function sendEmailNotification(data: ContactFormData): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL ?? "hello@zenlumeyoga.com";
+  const toEmail = process.env.CONTACT_TO_EMAIL ?? "tidelineswim@swimsuitcustom.com";
 
   if (!apiKey) {
     console.warn("RESEND_API_KEY not set, skipping email.");

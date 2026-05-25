@@ -44,7 +44,7 @@ export default function ContactSection() {
             {/* Contact info */}
             <div className="space-y-5 mb-10">
               {[
-                { label: "Email", value: "hello@zenlumeyoga.com" },
+                { label: "Email", value: "tidelineswim@swimsuitcustom.com" },
                 { label: "Instagram", value: "@zenlumeyoga" },
                 { label: "Working Hours", value: "Mon – Sat  9:00 — 18:00" },
                 { label: "Response Time", value: "Within 24 hours" },

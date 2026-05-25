@@ -46,7 +46,7 @@ export default function Footer() {
             </div>
             <div className="space-y-4">
               {[
-                { label: "Email", value: "hello@zenlumeyoga.com" },
+                { label: "Email", value: "tidelineswim@swimsuitcustom.com" },
                 { label: "Instagram", value: "@zenlumeyoga" },
                 { label: "Working Hours", value: "Mon – Sat  9:00 — 18:00" },
               ].map((item) => (

@@ -72,7 +72,7 @@ export default function ContactPageContent() {
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {[
-              { label: "Email", value: "hello@zenlumeyoga.com" },
+              { label: "Email", value: "tidelineswim@swimsuitcustom.com" },
               { label: "Instagram", value: "@zenlumeyoga" },
               { label: "Response Time", value: "Within 24 hours" },
               { label: "Working Hours", value: "Mon – Sat  9:00 — 18:00" },
@@ -219,7 +219,7 @@ export default function ContactPageContent() {
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Email", value: "hello@zenlumeyoga.com", sub: "For production inquiries and general questions." },
+              { title: "Email", value: "tidelineswim@swimsuitcustom.com", sub: "For production inquiries and general questions." },
               { title: "Instagram", value: "@zenlumeyoga", sub: "Follow our work and reach us via DM." },
               { title: "Working Hours", value: "Mon – Sat  9:00 — 18:00", sub: "We are available across most global time zones." },
             ].map((item) => (
