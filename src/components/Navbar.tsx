@@ -90,7 +90,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-[72px] will-change-transform transition-colors duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-[72px] transition-colors duration-500 ${
         scrolled ? "bg-[oklch(0.10_0.004_60)]/95 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
