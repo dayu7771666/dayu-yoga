@@ -45,6 +45,7 @@ const apparelSubMenu = [
 
 const siteLinks = [
   { label: "About", href: "/about" },
+  { label: "Journal", href: "/blog" },
   { label: "Policy", href: "/policy" },
 ];
 
@@ -85,6 +86,7 @@ export default function Navbar() {
   }, [pathname]);
 
   const isShopActive = pathname.startsWith("/collections") || pathname.startsWith("/products");
+  const isJournalActive = pathname.startsWith("/blog");
 
   return (
     <header
@@ -186,7 +188,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`font-[family-name:var(--font-montserrat)] text-xs tracking-[0.15em] uppercase transition-colors duration-300 ${
-                pathname === link.href ? "text-white" : "text-white/60 hover:text-white"
+                (link.href === "/blog" ? isJournalActive : pathname === link.href) ? "text-white" : "text-white/60 hover:text-white"
               }`}
             >
               {link.label}
