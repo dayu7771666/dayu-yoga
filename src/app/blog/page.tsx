@@ -112,10 +112,10 @@ function PostCard({ post, featured }: { post: PostCard; featured?: boolean }) {
     >
       {/* Cover image */}
       <div className="relative w-full aspect-[16/10] bg-[oklch(0.9_0.005_80)] overflow-hidden">
-        {post.mainImageUrl ? (
+        {post.coverImageUrl ? (
           <Image
-            src={post.mainImageUrl}
-            alt={post.mainImageAlt ?? post.title}
+            src={post.coverImageUrl}
+            alt={post.coverImageAlt ?? post.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -130,9 +130,9 @@ function PostCard({ post, featured }: { post: PostCard; featured?: boolean }) {
         )}
 
         {/* Category badge */}
-        {post.categories && post.categories.length > 0 && (
+        {post.category && (
           <span className="absolute top-4 left-4 bg-[oklch(0.38_0.09_162)] text-white text-[10px] font-semibold tracking-[0.15em] uppercase px-3 py-1">
-            {post.categories[0]}
+            {post.category.replace(/-/g, ' ')}
           </span>
         )}
       </div>

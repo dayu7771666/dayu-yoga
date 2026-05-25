@@ -15,17 +15,20 @@ export interface PostCard {
   slug: { current: string };
   publishedAt: string;
   excerpt?: string;
-  mainImageUrl?: string;
-  mainImageAlt?: string;
-  categories?: string[];
-  authorName?: string;
-  authorImageUrl?: string;
+  author?: string;
+  category?: string;
+  coverImageUrl?: string;
+  coverImageAlt?: string;
+  coverImageCaption?: string;
 }
 
 /** Full post — used on the blog detail page */
 export interface PostFull extends PostCard {
   body?: PortableTextBlock[];
-  authorBio?: PortableTextBlock[];
+  seoTitle?: string;
+  seoDescription?: string;
+  ogImageUrl?: string;
+  ogImageAlt?: string;
 }
 
 /** Slug item — used for generateStaticParams */

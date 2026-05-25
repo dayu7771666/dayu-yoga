@@ -13,16 +13,16 @@ export const POSTS_QUERY = `*[
   slug,
   publishedAt,
   excerpt,
-  "mainImageUrl": mainImage.asset->url,
-  "mainImageAlt": mainImage.alt,
-  "categories": categories[]->title,
-  "authorName": author->name,
-  "authorImageUrl": author->image.asset->url
+  author,
+  category,
+  "coverImageUrl": image.asset->url,
+  "coverImageAlt": image.alt,
+  "coverImageCaption": image.caption
 }`;
 
 /**
  * Blog detail page: fetch a single post by slug.
- * Returns the full body content plus all metadata.
+ * Returns the full body content plus all metadata for SEO.
  */
 export const POST_QUERY = `*[
   _type == "post"
@@ -33,13 +33,24 @@ export const POST_QUERY = `*[
   slug,
   publishedAt,
   excerpt,
-  body,
-  "mainImageUrl": mainImage.asset->url,
-  "mainImageAlt": mainImage.alt,
-  "categories": categories[]->title,
-  "authorName": author->name,
-  "authorImageUrl": author->image.asset->url,
-  "authorBio": author->bio
+  author,
+  category,
+  body[]{
+    ...,
+    _type == "image" => {
+      ...,
+      "imageUrl": asset->url,
+      "imageWidth": asset->metadata.dimensions.width,
+      "imageHeight": asset->metadata.dimensions.height
+    }
+  },
+  "coverImageUrl": image.asset->url,
+  "coverImageAlt": image.alt,
+  "coverImageCaption": image.caption,
+  seoTitle,
+  seoDescription,
+  "ogImageUrl": ogImage.asset->url,
+  "ogImageAlt": ogImage.alt
 }`;
 
 /**
