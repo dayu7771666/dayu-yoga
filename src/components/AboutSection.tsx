@@ -52,7 +52,7 @@ export default function AboutSection() {
                 src="/service-packaging.jpg"
                 alt="Zenlume production facility"
                 fill
-                className="object-cover img-bw"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

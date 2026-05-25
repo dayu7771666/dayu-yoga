@@ -59,16 +59,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-  /* ── Grayscale image hover ── */
-  .img-bw {
-    filter: grayscale(100%);
-    transition: filter 0.6s ease;
-  }
-  .img-bw:hover,
-  .group:hover .img-bw {
-    filter: grayscale(0%);
-  }
-  /* ── Number decoration ── */
+/* ── Number decoration ── */
   .deco-number {
     @apply font-[family-name:var(--font-cormorant)] text-5xl font-light leading-none;
     color: oklch(0.38 0.09 162 / 0.18);

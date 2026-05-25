@@ -71,7 +71,7 @@ export default function ContactSection() {
                 src="/hero-visual.jpg"
                 alt="Zenlume production studio"
                 fill
-                className="object-cover img-bw"
+                className="object-cover"
                 sizes="50vw"
               />
             </div>

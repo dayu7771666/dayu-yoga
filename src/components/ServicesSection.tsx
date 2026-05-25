@@ -58,7 +58,7 @@ function ServiceCard({ service, delay }: { service: (typeof services)[0]; delay:
           src={service.image}
           alt={service.title}
           fill
-          className="object-cover img-bw group-hover:scale-105 transition-transform duration-700"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
