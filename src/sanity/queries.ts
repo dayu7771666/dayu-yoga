@@ -20,8 +20,9 @@ export const POSTS_QUERY = `*[
 
 /**
  * Blog detail page: fetch a single post by slug.
- * Returns the full body content plus all metadata for SEO.
- * OG image is derived automatically from coverImage on the front end.
+ * Body images project their real pixel dimensions so the front end can render
+ * them at their natural aspect ratio without a fixed-ratio container.
+ * OG image is auto-derived from coverImage on the front end — no manual field.
  */
 export const POST_QUERY = `*[
   _type == "post"
