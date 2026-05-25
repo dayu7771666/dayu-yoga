@@ -90,11 +90,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-auto transition-all duration-500 ${
-        scrolled ? "bg-[oklch(0.10_0.004_60)]/95 backdrop-blur-sm md:py-4" : "bg-transparent md:py-6"
+      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-[72px] transition-colors duration-500 ${
+        scrolled ? "bg-[oklch(0.10_0.004_60)]/95 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full md:h-auto">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full">
         {/* Logo */}
         <Link
           href="/"
