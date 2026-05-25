@@ -121,29 +121,33 @@ const ptComponents = {
           : "max-w-2xl mx-auto"; // full also capped at max-w-2xl for readability
 
       return (
-        <figure className={`my-10 ${wrapperClass}`}>
-          {/*
-           * Fixed height of 450px with object-contain:
-           * - Image never exceeds 450px tall regardless of orientation
-           * - Original aspect ratio is fully preserved (no cropping)
-           * - Portrait images stay portrait, landscape stays landscape
-           * - Transparent background so no grey bars
-           */}
-          <div className="relative w-full h-[450px]">
-            <Image
-              src={src}
-              alt={value.alt ?? ""}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 672px"
-            />
-          </div>
+        /*
+         * not-prose: fully detaches this block from Tailwind Typography's
+         * margin/padding rules, so prose never interferes with image spacing.
+         *
+         * Using <div> instead of <figure> avoids the browser's automatic DOM
+         * "repair" that occurs when a block element sits inside a <p> tag
+         * (which Portable Text sometimes generates), preventing text from
+         * leaking into the image's margin area.
+         *
+         * max-h-[450px] caps height on all screen sizes without imposing a
+         * fixed height — the image shrinks naturally on mobile.
+         */
+        <div className={`not-prose my-10 ${wrapperClass}`}>
+          <Image
+            src={src}
+            alt={value.alt ?? ""}
+            width={imgWidth}
+            height={imgHeight}
+            className="w-auto max-w-full max-h-[450px] mx-auto block"
+            sizes="(max-width: 768px) 100vw, 672px"
+          />
           {value.caption && (
-            <figcaption className="mt-3 text-center text-xs text-[oklch(0.55_0.008_60)] tracking-wide italic">
+            <p className="mt-3 text-center text-xs text-[oklch(0.55_0.008_60)] tracking-wide italic">
               {value.caption}
-            </figcaption>
+            </p>
           )}
-        </figure>
+        </div>
       );
     },
   },
@@ -292,7 +296,6 @@ export default async function PostPage({
                 prose-li:text-base
                 prose-strong:text-[oklch(0.13_0.005_60)]
                 prose-img:rounded-none
-                prose-figure:my-0
               "
             >
               <PortableText value={post.body} components={ptComponents} />
