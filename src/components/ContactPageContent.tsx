@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import InquiryForm from "@/components/InquiryForm";
 
 const faqs = [
   {
@@ -19,17 +20,7 @@ const faqs = [
 ];
 
 export default function ContactPageContent() {
-  const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    brand: "",
-    product: "",
-    quantity: "",
-    timeline: "",
-    message: "",
-  });
   const refs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -44,17 +35,6 @@ export default function ContactPageContent() {
     refs.current.forEach((r) => r && observer.observe(r));
     return () => observer.disconnect();
   }, []);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <>
@@ -212,168 +192,24 @@ export default function ContactPageContent() {
               </div>
             </div>
 
-            {/* Right: Form */}
+            {/* Right: Unified Form */}
             <div ref={(el) => { refs.current[3] = el; }} className="reveal">
               <div className="bg-[oklch(0.97_0.005_80)] p-8 md:p-10 sticky top-28">
-                {submitted ? (
-                  <div className="flex flex-col items-center justify-center min-h-[500px] text-center">
-                    <div
-                      className="font-[family-name:var(--font-cormorant)] text-7xl leading-none mb-6"
-                      style={{ color: "oklch(0.38 0.09 162)", opacity: 0.2 }}
-                    >
-                      ✦
-                    </div>
-                    <h3 className="font-[family-name:var(--font-cormorant)] text-3xl font-semibold text-[oklch(0.13_0.005_60)] mb-4">
-                      Inquiry Received.
-                    </h3>
-                    <p className="font-[family-name:var(--font-montserrat)] text-sm text-gray-500 leading-relaxed max-w-xs mb-8">
-                      We will review your production requirements and respond with a detailed quote within 24 hours.
-                    </p>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 hover:text-[oklch(0.38_0.09_162)] transition-colors underline underline-offset-4"
-                    >
-                      Submit another inquiry
-                    </button>
-                  </div>
-                ) : (
-                  <>
-                    <div className="mb-8">
-                      <div className="section-eyebrow">
-                        <span className="eyebrow-text">Production Inquiry</span>
-                      </div>
-                      <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-semibold text-[oklch(0.13_0.005_60)]">
-                        Tell us what you need produced.
-                      </h2>
-                    </div>
-                    <form onSubmit={handleSubmit} className="space-y-5">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                          <label className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 block mb-2">
-                            Your Name *
-                          </label>
-                          <input
-                            type="text"
-                            name="name"
-                            required
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Jane Designer"
-                            className="w-full border border-gray-200 bg-white px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_162)] transition-colors"
-                          />
-                        </div>
-                        <div>
-                          <label className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 block mb-2">
-                            Email *
-                          </label>
-                          <input
-                            type="email"
-                            name="email"
-                            required
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="hello@yourbrand.com"
-                            className="w-full border border-gray-200 bg-white px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_162)] transition-colors"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <label className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 block mb-2">
-                          Brand Name (if any)
-                        </label>
-                        <input
-                          type="text"
-                          name="brand"
-                          value={formData.brand}
-                          onChange={handleChange}
-                          placeholder="Your brand name"
-                          className="w-full border border-gray-200 bg-white px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_162)] transition-colors"
-                        />
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                          <label className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 block mb-2">
-                            Product Type *
-                          </label>
-                          <select
-                            name="product"
-                            required
-                            value={formData.product}
-                            onChange={handleChange}
-                            className="w-full border border-gray-200 bg-white px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_162)] transition-colors appearance-none"
-                          >
-                            <option value="">Select product type</option>
-                            {["Yoga Apparel", "Custom Packaging", "Logo Application", "Yoga Accessories", "Full Product Line", "Other"].map((v) => (
-                              <option key={v} value={v}>{v}</option>
-                            ))}
-                          </select>
-                        </div>
-                        <div>
-                          <label className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 block mb-2">
-                            Estimated Quantity *
-                          </label>
-                          <select
-                            name="quantity"
-                            required
-                            value={formData.quantity}
-                            onChange={handleChange}
-                            className="w-full border border-gray-200 bg-white px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_162)] transition-colors appearance-none"
-                          >
-                            <option value="">Select quantity</option>
-                            {["50–200 units", "200–500 units", "500–1,000 units", "1,000–5,000 units", "5,000+ units"].map((v) => (
-                              <option key={v} value={v}>{v}</option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                      <div>
-                        <label className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 block mb-2">
-                          Ideal Timeline
-                        </label>
-                        <select
-                          name="timeline"
-                          value={formData.timeline}
-                          onChange={handleChange}
-                          className="w-full border border-gray-200 bg-white px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_162)] transition-colors appearance-none"
-                        >
-                          <option value="">Select timeline</option>
-                          {["ASAP (Rush)", "Within 1 month", "Within 2 months", "Within 3 months", "Flexible"].map((v) => (
-                            <option key={v} value={v}>{v}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div>
-                        <label className="font-[family-name:var(--font-montserrat)] text-xs tracking-widest uppercase text-gray-400 block mb-2">
-                          Production Brief *
-                        </label>
-                        <textarea
-                          name="message"
-                          required
-                          rows={4}
-                          value={formData.message}
-                          onChange={handleChange}
-                          placeholder="Describe your product specs: fabric type, print technique, logo application method, packaging material, colorways, or any specific requirements. The more detail you provide, the faster we can quote."
-                          className="w-full border border-gray-200 bg-white px-4 py-3 font-[family-name:var(--font-montserrat)] text-sm focus:outline-none focus:border-[oklch(0.38_0.09_162)] transition-colors resize-none"
-                        />
-                      </div>
-                      <button
-                        type="submit"
-                        className="relative overflow-hidden w-full inline-flex items-center justify-center px-10 py-3.5 font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase text-white bg-[oklch(0.38_0.09_162)] group"
-                      >
-                        <span className="absolute inset-0 bg-[oklch(0.28_0.08_162)] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
-                        <span className="relative z-10">Request a Quote</span>
-                      </button>
-                      <p className="font-[family-name:var(--font-montserrat)] text-xs text-gray-400 text-center">
-                        We reply within 24 hours. All inquiries are NDA-protected.{" "}
-                        <Link href="/policy" className="text-[oklch(0.38_0.09_162)] hover:underline underline-offset-2">
-                          View our policy.
-                        </Link>
-                      </p>
-                    </form>
-                  </>
-                )}
+                <div className="mb-8">
+                  <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-semibold text-[oklch(0.13_0.005_60)] mb-2">
+                    Tell us what you need produced.
+                  </h2>
+                  <p className="font-[family-name:var(--font-montserrat)] text-xs text-gray-400">
+                    All inquiries are NDA-protected.{" "}
+                    <Link href="/policy" className="text-[oklch(0.38_0.09_162)] hover:underline underline-offset-2">
+                      View our policy.
+                    </Link>
+                  </p>
+                </div>
+                <InquiryForm theme="light" />
               </div>
             </div>
+
           </div>
         </div>
       </section>
