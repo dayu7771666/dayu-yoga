@@ -41,7 +41,7 @@ export default function HeroSection() {
               style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
             >
               <span className="block w-8 h-px bg-[oklch(0.38_0.09_162)]" />
-              <span className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.3em] uppercase text-[oklch(0.38_0.09_162)]">
+              <span className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.3em] uppercase text-white/80">
                 Production Studio · China Manufacturing Hub
               </span>
             </div>

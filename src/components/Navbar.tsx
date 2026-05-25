@@ -90,11 +90,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-[oklch(0.10_0.004_60)]/95 backdrop-blur-sm py-4" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 h-16 md:h-auto transition-all duration-500 ${
+        scrolled ? "bg-[oklch(0.10_0.004_60)]/95 backdrop-blur-sm md:py-4" : "bg-transparent md:py-6"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-full md:h-auto">
         {/* Logo */}
         <Link
           href="/"
@@ -149,7 +149,7 @@ export default function Navbar() {
 
                 {/* Bottom: Yoga Apparel sub-menu */}
                 <div className="p-6">
-                  <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-[oklch(0.38_0.09_162)] mb-5">
+                  <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-white/80 mb-5">
                     Yoga Apparel — Browse by Category
                   </div>
                   <div className="grid grid-cols-4 gap-6">
