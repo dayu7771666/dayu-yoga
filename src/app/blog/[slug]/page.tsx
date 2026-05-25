@@ -122,15 +122,22 @@ const ptComponents = {
 
       return (
         <figure className={`my-10 ${wrapperClass}`}>
-          {/* No fixed-ratio container — image determines its own height */}
-          <Image
-            src={src}
-            alt={value.alt ?? ""}
-            width={imgWidth}
-            height={imgHeight}
-            className="w-full h-auto"
-            sizes="(max-width: 768px) 100vw, 672px"
-          />
+          {/*
+           * Fixed height of 450px with object-contain:
+           * - Image never exceeds 450px tall regardless of orientation
+           * - Original aspect ratio is fully preserved (no cropping)
+           * - Portrait images stay portrait, landscape stays landscape
+           * - Transparent background so no grey bars
+           */}
+          <div className="relative w-full h-[450px]">
+            <Image
+              src={src}
+              alt={value.alt ?? ""}
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 672px"
+            />
+          </div>
           {value.caption && (
             <figcaption className="mt-3 text-center text-xs text-[oklch(0.55_0.008_60)] tracking-wide italic">
               {value.caption}
