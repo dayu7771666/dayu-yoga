@@ -26,6 +26,16 @@ export const metadata: Metadata = {
     description: "One-click custom yoga branding for designers and entrepreneurs.",
     type: "website",
   },
+  // ── Testing phase: block all search engine indexing ──────────────────────
+  // Remove or set index: true when ready to go live
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function RootLayout({
