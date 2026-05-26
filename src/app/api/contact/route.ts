@@ -159,7 +159,7 @@ async function sendEmailNotification(data: ContactFormData): Promise<void> {
   `.trim();
 
   await resend.emails.send({
-    from: "Zenlume Yoga <onboarding@resend.dev>",
+    from: "Zenlume Yoga <noreply@yogaoh.com>",
     to: [toEmail],
     replyTo: data.email,
     subject: `New Inquiry: ${data.product} — ${data.name}`,
