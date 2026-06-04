@@ -13,7 +13,7 @@ export default function MatchingSetsPage() {
         title="Matching"
         titleBold="Sets."
         subtitle="Coordinated top and bottom sets with unified fabric, print and logo. The complete branded look — produced together, delivered together."
-        heroImage="/about-studio.jpg"
+        heroImage="/yoga/matching-sets.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 sets"
@@ -33,9 +33,9 @@ export default function MatchingSetsPage() {
           { step: "04", title: "Delivery", desc: "Sets packed and shipped together. DDP and FOB options available." },
         ]}
         relatedProducts={[
-          { label: "Full-length Leggings", href: "/products/leggings", image: "/hero-visual.jpg" },
-          { label: "Sports Bras", href: "/products/sports-bras", image: "/service-logo.jpg" },
-          { label: "Fitted Tops", href: "/products/fitted-tops", image: "/service-packaging.jpg" },
+          { label: "Full-length Leggings", href: "/products/leggings", image: "/yoga/full-length-leggings.png" },
+          { label: "Sports Bras", href: "/products/sports-bras", image: "/yoga/sports-bras.png" },
+          { label: "Fitted Tops", href: "/products/fitted-tops", image: "/yoga/fitted-tops.png" },
         ]}
       />
       <Footer />

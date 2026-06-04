@@ -13,7 +13,7 @@ export default function ShortsPage() {
         title="Yoga"
         titleBold="Shorts."
         subtitle="Biker shorts, training shorts and flowy styles. Custom fabric, waistband, print and logo — produced to your exact specification."
-        heroImage="/about-studio.jpg"
+        heroImage="/yoga/shorts.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
@@ -34,9 +34,9 @@ export default function ShortsPage() {
           { step: "04", title: "Delivery", desc: "Packed and shipped to your door or warehouse. DDP and FOB options available." },
         ]}
         relatedProducts={[
-          { label: "Full-length Leggings", href: "/products/leggings", image: "/hero-visual.jpg" },
-          { label: "Sports Bras", href: "/products/sports-bras", image: "/service-logo.jpg" },
-          { label: "Matching Sets", href: "/products/matching-sets", image: "/about-studio.jpg" },
+          { label: "Full-length Leggings", href: "/products/leggings", image: "/yoga/full-length-leggings.png" },
+          { label: "Sports Bras", href: "/products/sports-bras", image: "/yoga/sports-bras.png" },
+          { label: "Matching Sets", href: "/products/matching-sets", image: "/yoga/matching-sets.png" },
         ]}
       />
       <Footer />

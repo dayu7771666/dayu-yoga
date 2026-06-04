@@ -13,7 +13,7 @@ export default function SportsBrasPage() {
         title="Sports"
         titleBold="Bras."
         subtitle="Low to high impact sports bras with custom strap design, fabric selection and logo application. Your silhouette, your brand."
-        heroImage="/service-logo.jpg"
+        heroImage="/yoga/sports-bras.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
@@ -34,9 +34,9 @@ export default function SportsBrasPage() {
           { step: "04", title: "Delivery", desc: "Packed and shipped to your door or warehouse. DDP and FOB options available." },
         ]}
         relatedProducts={[
-          { label: "Fitted Tops", href: "/products/fitted-tops", image: "/hero-visual.jpg" },
-          { label: "Matching Sets", href: "/products/matching-sets", image: "/about-studio.jpg" },
-          { label: "Full-length Leggings", href: "/products/leggings", image: "/service-packaging.jpg" },
+          { label: "Fitted Tops", href: "/products/fitted-tops", image: "/yoga/fitted-tops.png" },
+          { label: "Matching Sets", href: "/products/matching-sets", image: "/yoga/matching-sets.png" },
+          { label: "Full-length Leggings", href: "/products/leggings", image: "/yoga/full-length-leggings.png" },
         ]}
       />
       <Footer />

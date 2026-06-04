@@ -13,7 +13,7 @@ export default function RelaxedTopsPage() {
         title="Relaxed"
         titleBold="Tops."
         subtitle="Flowy and oversized silhouettes for the studio, the street and everything in between. Custom cut, fabric and branding at any scale."
-        heroImage="/service-packaging.jpg"
+        heroImage="/yoga/relaxed-tops.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
@@ -34,9 +34,9 @@ export default function RelaxedTopsPage() {
           { step: "04", title: "Delivery", desc: "Packed and shipped to your door or warehouse. DDP and FOB options available." },
         ]}
         relatedProducts={[
-          { label: "Fitted Tops", href: "/products/fitted-tops", image: "/hero-visual.jpg" },
-          { label: "Sports Bras", href: "/products/sports-bras", image: "/service-logo.jpg" },
-          { label: "Jackets", href: "/products/jackets", image: "/about-studio.jpg" },
+          { label: "Fitted Tops", href: "/products/fitted-tops", image: "/yoga/fitted-tops.png" },
+          { label: "Sports Bras", href: "/products/sports-bras", image: "/yoga/sports-bras.png" },
+          { label: "Jackets", href: "/products/jackets", image: "/yoga/outerwear-warmup.png" },
         ]}
       />
       <Footer />

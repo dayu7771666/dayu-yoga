@@ -13,7 +13,7 @@ export default function JacketsPage() {
         title="Yoga"
         titleBold="Jackets."
         subtitle="Lightweight warmup jackets and zip-ups for studio and outdoor wear. Custom lining, zipper hardware, print and logo application."
-        heroImage="/service-logo.jpg"
+        heroImage="/yoga/outerwear-warmup.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
@@ -35,8 +35,8 @@ export default function JacketsPage() {
         ]}
         relatedProducts={[
           { label: "Winter Yoga Wear", href: "/products/winter", image: "/about-studio.jpg" },
-          { label: "Relaxed Tops", href: "/products/relaxed-tops", image: "/service-packaging.jpg" },
-          { label: "Matching Sets", href: "/products/matching-sets", image: "/hero-visual.jpg" },
+          { label: "Relaxed Tops", href: "/products/relaxed-tops", image: "/yoga/relaxed-tops.png" },
+          { label: "Matching Sets", href: "/products/matching-sets", image: "/yoga/matching-sets.png" },
         ]}
       />
       <Footer />

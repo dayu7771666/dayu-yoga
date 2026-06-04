@@ -13,7 +13,7 @@ export default function FittedTopsPage() {
         title="Fitted"
         titleBold="Tops."
         subtitle="Crop and full-length fitted tops for studio and everyday wear. Custom neckline, fabric, print and logo — produced exactly as you specify."
-        heroImage="/hero-visual.jpg"
+        heroImage="/yoga/fitted-tops.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
@@ -34,9 +34,9 @@ export default function FittedTopsPage() {
           { step: "04", title: "Delivery", desc: "Packed and shipped to your door or warehouse. DDP and FOB options available." },
         ]}
         relatedProducts={[
-          { label: "Sports Bras", href: "/products/sports-bras", image: "/service-logo.jpg" },
-          { label: "Relaxed Tops", href: "/products/relaxed-tops", image: "/service-packaging.jpg" },
-          { label: "Matching Sets", href: "/products/matching-sets", image: "/about-studio.jpg" },
+          { label: "Sports Bras", href: "/products/sports-bras", image: "/yoga/sports-bras.png" },
+          { label: "Relaxed Tops", href: "/products/relaxed-tops", image: "/yoga/relaxed-tops.png" },
+          { label: "Matching Sets", href: "/products/matching-sets", image: "/yoga/matching-sets.png" },
         ]}
       />
       <Footer />

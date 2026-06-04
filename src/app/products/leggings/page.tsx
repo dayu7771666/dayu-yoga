@@ -13,7 +13,7 @@ export default function LeggingsPage() {
         title="Full-length"
         titleBold="Leggings."
         subtitle="High-waist, 4-way stretch leggings built for performance and brand identity. You choose every detail — we produce it at scale."
-        heroImage="/hero-visual.jpg"
+        heroImage="/yoga/full-length-leggings.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
@@ -34,9 +34,9 @@ export default function LeggingsPage() {
           { step: "04", title: "Delivery", desc: "Packed and shipped to your door or warehouse. DDP and FOB options available." },
         ]}
         relatedProducts={[
-          { label: "Capri Leggings", href: "/products/capri", image: "/service-packaging.jpg" },
-          { label: "Matching Sets", href: "/products/matching-sets", image: "/about-studio.jpg" },
-          { label: "Sports Bras", href: "/products/sports-bras", image: "/service-logo.jpg" },
+          { label: "Capri Leggings", href: "/products/capri", image: "/yoga/capri-leggings.png" },
+          { label: "Matching Sets", href: "/products/matching-sets", image: "/yoga/matching-sets.png" },
+          { label: "Sports Bras", href: "/products/sports-bras", image: "/yoga/sports-bras.png" },
         ]}
       />
       <Footer />

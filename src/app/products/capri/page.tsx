@@ -13,7 +13,7 @@ export default function CapriPage() {
         title="Capri"
         titleBold="Leggings."
         subtitle="7/8-length leggings — the versatile studio-to-street silhouette. Custom fabric, print and branding produced at scale."
-        heroImage="/service-packaging.jpg"
+        heroImage="/yoga/capri-leggings.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
@@ -34,9 +34,9 @@ export default function CapriPage() {
           { step: "04", title: "Delivery", desc: "Packed and shipped to your door or warehouse. DDP and FOB options available." },
         ]}
         relatedProducts={[
-          { label: "Full-length Leggings", href: "/products/leggings", image: "/hero-visual.jpg" },
-          { label: "Shorts", href: "/products/shorts", image: "/about-studio.jpg" },
-          { label: "Matching Sets", href: "/products/matching-sets", image: "/service-logo.jpg" },
+          { label: "Full-length Leggings", href: "/products/leggings", image: "/yoga/full-length-leggings.png" },
+          { label: "Shorts", href: "/products/shorts", image: "/yoga/shorts.png" },
+          { label: "Matching Sets", href: "/products/matching-sets", image: "/yoga/matching-sets.png" },
         ]}
       />
       <Footer />
