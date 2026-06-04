@@ -25,7 +25,7 @@ export default function HeroSection() {
           src="/hero-bg.jpg"
           alt="Premium yoga apparel by Zenlume"
           fill
-          className="object-cover object-center opacity-70"
+          className="object-cover object-right opacity-70"
           priority
           sizes="100vw"
         />
