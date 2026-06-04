@@ -22,7 +22,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/hero-bg.jpg"
+          src="/hero-bg1.jpg"
           alt="Premium yoga apparel by Zenlume"
           fill
           className="object-cover object-right opacity-70"
