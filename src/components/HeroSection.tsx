@@ -22,14 +22,14 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/about-studio.jpg"
-          alt="Zenlume production studio"
+          src="/hero-bg.jpg"
+          alt="Premium yoga apparel by Zenlume"
           fill
-          className="object-cover object-center opacity-40"
+          className="object-cover object-center opacity-70"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[oklch(0.10_0.004_60)]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.08_0.004_60)]/80 via-[oklch(0.08_0.004_60)]/50 to-transparent" />
       </div>
 
       {/* Content */}
