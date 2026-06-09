@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import CollectionPageTemplate from "@/components/CollectionPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Yoga Apparel — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Yoga Apparel — Zenlume Yoga",
+  description:
+    "Custom yoga apparel manufactured to your specifications. Leggings, sports bras, tops, matching sets and more. MOQ from 50 units. China-based production studio.",
+  keywords: "custom yoga apparel, yoga clothing manufacturer, private label yoga wear, yoga leggings wholesale",
+  alternates: { canonical: "https://www.yogaoh.com/collections/yoga" },
+  openGraph: {
+    title: "Yoga Apparel — Zenlume Yoga",
+    description:
+      "Custom yoga apparel manufactured to your specifications. Leggings, sports bras, tops, matching sets and more. MOQ from 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/collections/yoga",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 const subCategories = [
   {
@@ -66,7 +81,7 @@ export default function YogaCollectionPage() {
         subtitle="Select your category, choose your fabrics, define your prints and logo application — we handle production from sample to bulk delivery."
         heroImage="/hero-visual.jpg"
         subCategories={subCategories}
-        ctaTitle="Ready to produce\nyour yoga apparel line?"
+        ctaTitle="Ready to produce&#10;your yoga apparel line?"
         ctaBody="Share your specs and receive a detailed production quote within 24 hours. MOQ from 50 units per style."
       />
       <Footer />

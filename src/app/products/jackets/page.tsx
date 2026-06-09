@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Yoga Jackets — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Yoga Jackets — Zenlume Yoga",
+  description:
+    "Custom yoga jackets and warmup zip-ups. Lightweight outerwear with custom lining, zipper hardware, print and logo. MOQ 50 units. China manufacturer.",
+  keywords: "custom yoga jackets, private label warmup jackets, yoga outerwear manufacturer, branded zip-up jackets",
+  alternates: { canonical: "https://www.yogaoh.com/products/jackets" },
+  openGraph: {
+    title: "Yoga Jackets — Zenlume Yoga",
+    description:
+      "Custom yoga jackets and warmup zip-ups. Lightweight outerwear with custom lining, zipper hardware, print and logo. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/jackets",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function JacketsPage() {
   return (

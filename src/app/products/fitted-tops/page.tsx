@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Fitted Tops — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Fitted Tops — Zenlume Yoga",
+  description:
+    "Custom fitted yoga tops including crop and full-length styles. Private label with custom neckline, fabric, print and logo. MOQ 50 units.",
+  keywords: "custom yoga tops, private label fitted tops, wholesale yoga shirts, yoga crop top manufacturer",
+  alternates: { canonical: "https://www.yogaoh.com/products/fitted-tops" },
+  openGraph: {
+    title: "Fitted Tops — Zenlume Yoga",
+    description:
+      "Custom fitted yoga tops including crop and full-length styles. Private label with custom neckline, fabric, print and logo. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/fitted-tops",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function FittedTopsPage() {
   return (

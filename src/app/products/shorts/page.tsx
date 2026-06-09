@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Yoga Shorts — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Yoga Shorts — Zenlume Yoga",
+  description:
+    "Custom yoga shorts including biker shorts, training shorts and flowy styles. Private label with custom fabric, print and logo. MOQ 50 units.",
+  keywords: "custom yoga shorts, private label biker shorts, wholesale yoga shorts, yoga shorts manufacturer",
+  alternates: { canonical: "https://www.yogaoh.com/products/shorts" },
+  openGraph: {
+    title: "Yoga Shorts — Zenlume Yoga",
+    description:
+      "Custom yoga shorts including biker shorts, training shorts and flowy styles. Private label with custom fabric, print and logo. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/shorts",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function ShortsPage() {
   return (

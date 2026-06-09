@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Winter Yoga Wear — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Winter Yoga Wear — Zenlume Yoga",
+  description:
+    "Custom thermal and insulated winter yoga wear. Fleece-lined leggings, thermal tops and insulated jackets for cold-weather practice. MOQ 50 units.",
+  keywords: "custom winter yoga wear, thermal yoga leggings, fleece yoga clothing manufacturer, cold weather yoga apparel",
+  alternates: { canonical: "https://www.yogaoh.com/products/winter" },
+  openGraph: {
+    title: "Winter Yoga Wear — Zenlume Yoga",
+    description:
+      "Custom thermal and insulated winter yoga wear. Fleece-lined leggings, thermal tops and insulated jackets for cold-weather practice. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/winter",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function WinterPage() {
   return (

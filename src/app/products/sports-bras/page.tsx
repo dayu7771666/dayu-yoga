@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Sports Bras — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Sports Bras — Zenlume Yoga",
+  description:
+    "Custom yoga sports bras from low to high impact. Private label with custom strap design, fabric and logo application. MOQ 50 units. China manufacturer.",
+  keywords: "custom sports bras, private label yoga bras, wholesale sports bras, yoga bra manufacturer",
+  alternates: { canonical: "https://www.yogaoh.com/products/sports-bras" },
+  openGraph: {
+    title: "Sports Bras — Zenlume Yoga",
+    description:
+      "Custom yoga sports bras from low to high impact. Private label with custom strap design, fabric and logo application. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/sports-bras",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function SportsBrasPage() {
   return (

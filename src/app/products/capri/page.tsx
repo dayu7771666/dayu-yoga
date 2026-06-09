@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Capri Leggings — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Capri Leggings — Zenlume Yoga",
+  description:
+    "Custom 7/8-length capri yoga leggings. Private label manufacturing with custom fabric, print and branding. MOQ 50 units. China-based production.",
+  keywords: "custom capri leggings, private label yoga capri, wholesale yoga bottoms, yoga capri manufacturer",
+  alternates: { canonical: "https://www.yogaoh.com/products/capri" },
+  openGraph: {
+    title: "Capri Leggings — Zenlume Yoga",
+    description:
+      "Custom 7/8-length capri yoga leggings. Private label manufacturing with custom fabric, print and branding. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/capri",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function CapriPage() {
   return (

@@ -48,16 +48,11 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1
-              className="hero-line font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] text-white mb-4"
+              className="hero-line font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.05] text-white mb-6"
               style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
             >
-              You design it.
-            </h1>
-            <h1
-              className="hero-line font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl lg:text-8xl font-semibold italic leading-[1.05] text-white mb-6"
-              style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.7s ease, transform 0.7s ease" }}
-            >
-              We make it real.
+              You design it.{" "}
+              <span className="italic block">We make it real.</span>
             </h1>
 
             {/* Sub */}

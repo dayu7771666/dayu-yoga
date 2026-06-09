@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import CollectionPageTemplate from "@/components/CollectionPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Custom Packaging — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Custom Packaging — Zenlume Yoga",
+  description:
+    "Custom yoga brand packaging including shopping bags, gift boxes, hang tags, tissue paper and inserts. Full branding solutions from China manufacturer. MOQ 100 units.",
+  keywords: "custom yoga packaging, branded gift boxes, yoga hang tags, private label packaging manufacturer",
+  alternates: { canonical: "https://www.yogaoh.com/collections/packaging" },
+  openGraph: {
+    title: "Custom Packaging — Zenlume Yoga",
+    description:
+      "Custom yoga brand packaging including shopping bags, gift boxes, hang tags, tissue paper and inserts. Full branding solutions from China manufacturer.",
+    type: "website",
+    url: "https://www.yogaoh.com/collections/packaging",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 const subCategories = [
   {

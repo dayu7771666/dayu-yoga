@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import CollectionPageTemplate from "@/components/CollectionPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Logo Application — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Logo Application — Zenlume Yoga",
+  description:
+    "Professional logo application services for yoga brands. Embroidery, heat transfer, screen printing, woven labels, rubber patches and sublimation. MOQ 50 units.",
+  keywords: "yoga logo application, embroidery yoga apparel, custom woven labels, sublimation printing yoga",
+  alternates: { canonical: "https://www.yogaoh.com/collections/logo" },
+  openGraph: {
+    title: "Logo Application — Zenlume Yoga",
+    description:
+      "Professional logo application services for yoga brands. Embroidery, heat transfer, screen printing, woven labels, rubber patches and sublimation.",
+    type: "website",
+    url: "https://www.yogaoh.com/collections/logo",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 const subCategories = [
   {

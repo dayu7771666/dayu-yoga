@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Matching Sets — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Matching Sets — Zenlume Yoga",
+  description:
+    "Custom coordinated yoga matching sets. Sports bra and leggings sets with unified fabric, print and logo. MOQ 50 sets. Private label manufacturer.",
+  keywords: "custom yoga matching sets, private label yoga sets, coordinated yoga outfits, yoga set manufacturer",
+  alternates: { canonical: "https://www.yogaoh.com/products/matching-sets" },
+  openGraph: {
+    title: "Matching Sets — Zenlume Yoga",
+    description:
+      "Custom coordinated yoga matching sets. Sports bra and leggings sets with unified fabric, print and logo. MOQ 50 sets.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/matching-sets",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function MatchingSetsPage() {
   return (

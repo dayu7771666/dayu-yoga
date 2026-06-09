@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import CollectionPageTemplate from "@/components/CollectionPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Yoga Accessories — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Yoga Accessories — Zenlume Yoga",
+  description:
+    "Custom yoga accessories including mats, bags, towels and resistance bands. Private label manufacturing with custom branding. MOQ 100 units.",
+  keywords: "custom yoga accessories, private label yoga mats, yoga bags manufacturer, branded yoga towels",
+  alternates: { canonical: "https://www.yogaoh.com/collections/accessories" },
+  openGraph: {
+    title: "Yoga Accessories — Zenlume Yoga",
+    description:
+      "Custom yoga accessories including mats, bags, towels and resistance bands. Private label manufacturing with custom branding. MOQ 100 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/collections/accessories",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 const subCategories = [
   {
@@ -42,7 +57,7 @@ export default function AccessoriesCollectionPage() {
         subtitle="Custom yoga accessories manufactured to your specifications. Choose materials, define your branding, and we handle production at scale."
         heroImage="/about-studio.jpg"
         subCategories={subCategories}
-        ctaTitle="Need a custom\naccessories line?"
+        ctaTitle="Need a custom&#10;accessories line?"
         ctaBody="Tell us what you need and we will produce it. MOQ and pricing confirmed within 24 hours."
       />
       <Footer />

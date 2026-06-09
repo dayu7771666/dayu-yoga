@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Full-length Leggings — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Full-length Leggings — Zenlume Yoga",
+  description:
+    "Custom full-length yoga leggings. High-waist, 4-way stretch with custom fabric, print and logo options. MOQ 50 units. China-based private label manufacturer.",
+  keywords: "custom yoga leggings, private label leggings, wholesale yoga pants, yoga leggings manufacturer",
+  alternates: { canonical: "https://www.yogaoh.com/products/leggings" },
+  openGraph: {
+    title: "Full-length Leggings — Zenlume Yoga",
+    description:
+      "Custom full-length yoga leggings. High-waist, 4-way stretch with custom fabric, print and logo options. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/leggings",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function LeggingsPage() {
   return (

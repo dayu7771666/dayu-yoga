@@ -3,7 +3,7 @@ import { client } from "@/sanity/client";
 import { POST_SLUGS_QUERY } from "@/sanity/queries";
 import type { PostSlug } from "@/sanity/types";
 
-const BASE_URL = "https://yogaoh.com";
+const BASE_URL = "https://www.yogaoh.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // ── Static pages ──────────────────────────────────────────────────────

@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import ProductPageTemplate from "@/components/ProductPageTemplate";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = { title: "Relaxed Tops — Zenlume Yoga" };
+export const metadata: Metadata = {
+  title: "Relaxed Tops — Zenlume Yoga",
+  description:
+    "Custom relaxed and oversized yoga tops. Flowy tanks, draped tops and boxy crops with custom fabric, print and branding. MOQ 50 units.",
+  keywords: "custom relaxed yoga tops, oversized yoga shirts, flowy yoga tops manufacturer, private label yoga tops",
+  alternates: { canonical: "https://www.yogaoh.com/products/relaxed-tops" },
+  openGraph: {
+    title: "Relaxed Tops — Zenlume Yoga",
+    description:
+      "Custom relaxed and oversized yoga tops. Flowy tanks, draped tops and boxy crops with custom fabric, print and branding. MOQ 50 units.",
+    type: "website",
+    url: "https://www.yogaoh.com/products/relaxed-tops",
+    siteName: "Zenlume Yoga",
+  },
+};
 
 export default function RelaxedTopsPage() {
   return (

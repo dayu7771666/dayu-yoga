@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/admin",
       },
     ],
-    sitemap: "https://yogaoh.com/sitemap.xml",
+    sitemap: "https://www.yogaoh.com/sitemap.xml",
   };
 }
