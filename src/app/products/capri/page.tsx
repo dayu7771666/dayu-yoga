@@ -223,7 +223,7 @@ export default function CapriPage() {
 
         relatedProducts={[
           { label: "Full-length Leggings", href: "/products/leggings", image: "/yoga/full-length-leggings.png" },
-          { label: "Yoga Shorts", href: "/products/shorts", image: "/yoga/yoga-shorts.png" },
+          { label: "Yoga Shorts", href: "/products/shorts", image: "/yoga/shorts.png" },
           { label: "Matching Sets", href: "/products/matching-sets", image: "/yoga/matching-sets.png" },
         ]}
       />

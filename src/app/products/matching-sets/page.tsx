@@ -229,7 +229,7 @@ export default function MatchingSetsPage() {
         relatedProducts={[
           { label: "Full-length Leggings", href: "/products/leggings", image: "/yoga/full-length-leggings.png" },
           { label: "Sports Bras", href: "/products/sports-bras", image: "/yoga/sports-bras.png" },
-          { label: "Yoga Shorts", href: "/products/shorts", image: "/yoga/yoga-shorts.png" },
+          { label: "Yoga Shorts", href: "/products/shorts", image: "/yoga/shorts.png" },
         ]}
       />
       <Footer />

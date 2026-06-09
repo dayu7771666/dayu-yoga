@@ -27,7 +27,7 @@ export default function ShortsPage() {
         title="Yoga"
         titleBold="Shorts."
         subtitle="Biker shorts, training shorts and flowy styles. Custom fabric, waistband, print and logo — produced to your exact specification."
-        heroImage="/yoga/yoga-shorts.png"
+        heroImage="/yoga/shorts.png"
         backHref="/collections/yoga"
         backLabel="Yoga Apparel"
         moq="50 units"
