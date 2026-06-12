@@ -124,62 +124,71 @@ export default function Navbar() {
               </svg>
             </button>
 
-            {/* Mega dropdown */}
-            {shopOpen && (
-              <div
-                ref={dropdownRef}
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[680px] bg-[oklch(0.10_0.004_60)] border border-white/10 shadow-2xl"
-              >
-                {/* Top row: 4 collection links */}
-                <div className="grid grid-cols-4 border-b border-white/10">
-                  {collections.map((col) => (
-                    <Link
-                      key={col.href}
-                      href={col.href}
-                      className={`px-5 py-4 font-[family-name:var(--font-montserrat)] text-xs tracking-[0.12em] uppercase transition-colors duration-200 border-r border-white/10 last:border-r-0 ${
-                        pathname === col.href
-                          ? "text-white bg-white/10"
-                          : "text-white/80 hover:text-white hover:bg-white/10"
-                      }`}
-                    >
-                      {col.label}
-                    </Link>
+            {/*
+              SEO FIX: Mega dropdown is always rendered in the DOM so that
+              Googlebot can discover all product and collection links without
+              needing to interact with the page. Visibility is controlled via
+              CSS (opacity / visibility / pointer-events) instead of conditional
+              rendering, so the <a> tags are always present in the HTML source.
+            */}
+            <div
+              ref={dropdownRef}
+              aria-hidden={!shopOpen}
+              className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[680px] bg-[oklch(0.10_0.004_60)] border border-white/10 shadow-2xl transition-all duration-200 ${
+                shopOpen
+                  ? "opacity-100 visible translate-y-0 pointer-events-auto"
+                  : "opacity-0 invisible -translate-y-1 pointer-events-none"
+              }`}
+            >
+              {/* Top row: 4 collection links */}
+              <div className="grid grid-cols-4 border-b border-white/10">
+                {collections.map((col) => (
+                  <Link
+                    key={col.href}
+                    href={col.href}
+                    className={`px-5 py-4 font-[family-name:var(--font-montserrat)] text-xs tracking-[0.12em] uppercase transition-colors duration-200 border-r border-white/10 last:border-r-0 ${
+                      pathname === col.href
+                        ? "text-white bg-white/10"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {col.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Bottom: Yoga Apparel sub-menu */}
+              <div className="p-6">
+                <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-white/80 mb-5">
+                  Yoga Apparel — Browse by Category
+                </div>
+                <div className="grid grid-cols-4 gap-6">
+                  {apparelSubMenu.map((group) => (
+                    <div key={group.group}>
+                      <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.15em] uppercase text-white/60 mb-3">
+                        {group.group}
+                      </div>
+                      <ul className="space-y-2">
+                        {group.items.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              className={`font-[family-name:var(--font-montserrat)] text-xs transition-colors duration-200 block ${
+                                pathname === item.href
+                                  ? "text-white"
+                                  : "text-white/80 hover:text-white"
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
                 </div>
-
-                {/* Bottom: Yoga Apparel sub-menu */}
-                <div className="p-6">
-                  <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-white/80 mb-5">
-                    Yoga Apparel — Browse by Category
-                  </div>
-                  <div className="grid grid-cols-4 gap-6">
-                    {apparelSubMenu.map((group) => (
-                      <div key={group.group}>
-                        <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.15em] uppercase text-white/60 mb-3">
-                          {group.group}
-                        </div>
-                        <ul className="space-y-2">
-                          {group.items.map((item) => (
-                            <li key={item.href}>
-                              <Link
-                                href={item.href}
-                                className={`font-[family-name:var(--font-montserrat)] text-xs transition-colors duration-200 block ${
-                                  pathname === item.href
-                                    ? "text-white"
-                                    : "text-white/80 hover:text-white"
-                                }`}
-                              >
-                                {item.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
-            )}
+            </div>
           </div>
 
           {/* Site links */}
@@ -219,86 +228,100 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-[oklch(0.10_0.004_60)] px-6 py-6 flex flex-col gap-1 border-t border-white/10 max-h-[80vh] overflow-y-auto">
+      {/*
+        SEO FIX: Mobile menu is always rendered in the DOM so Googlebot can
+        discover all links. Visibility is controlled via CSS transitions
+        instead of conditional rendering.
+      */}
+      <div
+        aria-hidden={!menuOpen}
+        className={`md:hidden bg-[oklch(0.10_0.004_60)] px-6 py-6 flex flex-col gap-1 border-t border-white/10 max-h-[80vh] overflow-y-auto transition-all duration-300 ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none absolute w-full"
+        }`}
+      >
 
-          {/* Shop accordion */}
-          <button
-            onClick={() => setMobileShopOpen((v) => !v)}
-            className="flex items-center justify-between py-3 font-[family-name:var(--font-montserrat)] text-xs tracking-[0.15em] uppercase text-white/60 hover:text-white transition-colors w-full text-left"
+        {/* Shop accordion */}
+        <button
+          onClick={() => setMobileShopOpen((v) => !v)}
+          className="flex items-center justify-between py-3 font-[family-name:var(--font-montserrat)] text-xs tracking-[0.15em] uppercase text-white/60 hover:text-white transition-colors w-full text-left"
+        >
+          Shop
+          <svg
+            width="8" height="5" viewBox="0 0 8 5" fill="none"
+            className={`transition-transform duration-200 ${mobileShopOpen ? "rotate-180" : ""}`}
           >
-            Shop
-            <svg
-              width="8" height="5" viewBox="0 0 8 5" fill="none"
-              className={`transition-transform duration-200 ${mobileShopOpen ? "rotate-180" : ""}`}
-            >
-              <path d="M1 1L4 4L7 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+            <path d="M1 1L4 4L7 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
 
-          {mobileShopOpen && (
-            <div className="pl-4 pb-2 flex flex-col gap-1">
-              {/* Collection links */}
-              <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-[oklch(0.38_0.09_162)] py-2">
-                Collections
-              </div>
-              {collections.map((col) => (
-                <Link
-                  key={col.href}
-                  href={col.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors py-2"
-                >
-                  {col.label}
-                </Link>
-              ))}
-
-              {/* Apparel sub-categories */}
-              <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-[oklch(0.38_0.09_162)] pt-4 pb-2">
-                Yoga Apparel
-              </div>
-              {apparelSubMenu.map((group) => (
-                <div key={group.group} className="mb-3">
-                  <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-widest uppercase text-white/60 mb-1.5">
-                    {group.group}
-                  </div>
-                  {group.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="font-[family-name:var(--font-montserrat)] text-xs text-white/80 hover:text-white transition-colors block py-1.5 pl-2"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Site links */}
-          {siteLinks.map((link) => (
+        {/*
+          SEO FIX: Mobile shop sub-menu also always rendered in DOM.
+          CSS controls visibility.
+        */}
+        <div
+          aria-hidden={!mobileShopOpen}
+          className={`pl-4 pb-2 flex flex-col gap-1 transition-all duration-200 ${
+            mobileShopOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none absolute"
+          }`}
+        >
+          {/* Collection links */}
+          <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-[oklch(0.38_0.09_162)] py-2">
+            Collections
+          </div>
+          {collections.map((col) => (
             <Link
-              key={link.href}
-              href={link.href}
+              key={col.href}
+              href={col.href}
               onClick={() => setMenuOpen(false)}
-              className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.15em] uppercase text-white/60 hover:text-white transition-colors py-3"
+              className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.1em] uppercase text-white/80 hover:text-white transition-colors py-2"
             >
-              {link.label}
+              {col.label}
             </Link>
           ))}
 
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase text-white bg-[oklch(0.38_0.09_162)] px-6 py-3 text-center mt-2"
-          >
-            Get Started
-          </Link>
+          {/* Apparel sub-categories */}
+          <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-[0.2em] uppercase text-[oklch(0.38_0.09_162)] pt-4 pb-2">
+            Yoga Apparel
+          </div>
+          {apparelSubMenu.map((group) => (
+            <div key={group.group} className="mb-3">
+              <div className="font-[family-name:var(--font-montserrat)] text-[10px] tracking-widest uppercase text-white/60 mb-1.5">
+                {group.group}
+              </div>
+              {group.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="font-[family-name:var(--font-montserrat)] text-xs text-white/80 hover:text-white transition-colors block py-1.5 pl-2"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          ))}
         </div>
-      )}
+
+        {/* Site links */}
+        {siteLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            onClick={() => setMenuOpen(false)}
+            className="font-[family-name:var(--font-montserrat)] text-xs tracking-[0.15em] uppercase text-white/60 hover:text-white transition-colors py-3"
+          >
+            {link.label}
+          </Link>
+        ))}
+
+        <Link
+          href="/contact"
+          onClick={() => setMenuOpen(false)}
+          className="font-[family-name:var(--font-montserrat)] text-xs font-semibold tracking-[0.2em] uppercase text-white bg-[oklch(0.38_0.09_162)] px-6 py-3 text-center mt-2"
+        >
+          Get Started
+        </Link>
+      </div>
     </header>
   );
 }

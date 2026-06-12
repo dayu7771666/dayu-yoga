@@ -25,6 +25,8 @@ export async function generateStaticParams() {
   return slugs.map((item) => ({ slug: item.slug }));
 }
 
+const BASE_URL = "https://www.yogaoh.com";
+
 // Dynamic SEO metadata per post
 export async function generateMetadata({
   params,
@@ -43,14 +45,22 @@ export async function generateMetadata({
   const keywordsArray = post.keywords
     ? post.keywords.split(",").map((k) => k.trim()).filter(Boolean)
     : undefined;
+  const canonicalUrl = `${BASE_URL}/blog/${slug}`;
 
   return {
     title: metaTitle,
     description: metaDescription,
     keywords: keywordsArray,
+    // SEO FIX: add canonical URL so search engines index the correct permalink
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: metaTitle,
       description: metaDescription,
+      // SEO FIX: add explicit OG URL and siteName
+      url: canonicalUrl,
+      siteName: "Zenlume Yoga",
       images: ogImageUrl
         ? [{ url: ogImageUrl, alt: ogImageAlt, width: 1200, height: 630 }]
         : [],

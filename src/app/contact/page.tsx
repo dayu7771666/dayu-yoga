@@ -7,6 +7,23 @@ export const metadata: Metadata = {
   title: "Contact — Zenlume Yoga",
   description:
     "Start your yoga brand project with Zenlume Yoga. Reach out for logo design, premium packaging, or a full brand identity. We respond within 24 hours.",
+  alternates: {
+    canonical: "https://www.yogaoh.com/contact",
+  },
+  openGraph: {
+    title: "Contact — Zenlume Yoga",
+    description:
+      "Start your yoga brand project with Zenlume Yoga. Reach out for logo design, premium packaging, or a full brand identity. We respond within 24 hours.",
+    url: "https://www.yogaoh.com/contact",
+    siteName: "Zenlume Yoga",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact — Zenlume Yoga",
+    description:
+      "Start your yoga brand project with Zenlume Yoga. We respond within 24 hours.",
+  },
 };
 
 export default function ContactPage() {

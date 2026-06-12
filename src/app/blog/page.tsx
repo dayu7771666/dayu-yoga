@@ -11,6 +11,23 @@ export const metadata: Metadata = {
   title: "Journal — Zenlume Yoga",
   description:
     "Insights on yoga brand building, fabric selection, custom production, and the business of wellness — from the Zenlume studio.",
+  alternates: {
+    canonical: "https://www.yogaoh.com/blog",
+  },
+  openGraph: {
+    title: "Journal — Zenlume Yoga",
+    description:
+      "Insights on yoga brand building, fabric selection, custom production, and the business of wellness — from the Zenlume studio.",
+    url: "https://www.yogaoh.com/blog",
+    siteName: "Zenlume Yoga",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Journal — Zenlume Yoga",
+    description:
+      "Insights on yoga brand building, fabric selection, custom production, and the business of wellness.",
+  },
 };
 
 // ISR: revalidate every 60 seconds
